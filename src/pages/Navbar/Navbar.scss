@@ -2,16 +2,6 @@
     display: flex;
 }
 
-p, span, hr {
-    margin: 0;
-    padding: 0;
-}
-
-img {
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
 .header {
     display: flex;
     height: 99px;
@@ -35,7 +25,7 @@ img {
         margin-top: 33px;
         width: 32px;
         height: 32px;
-        border-radius: 10px;
+        border-radius: 16px;
         text-align: center;
         img {
             width: 13.74px;
@@ -44,7 +34,7 @@ img {
         }
     }
     .contact {
-        margin-top: 23px;
+        margin-top: 30px;
         margin-left: 10px;
         margin-right: 188px;
         color: #CFCFCF;
