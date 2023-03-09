@@ -1,0 +1,24 @@
+.header {
+    display: flex;
+    height: 99px;
+    justify-content: space-between;
+    .logo {
+        width: 100px;
+        height: 25px;
+        margin-top: 38px;
+        margin-right: 72px; 
+    }
+    input {
+        margin-top: 23px;
+        width: 191px;
+        height: 52px;
+        background: #504B4A;
+        box-shadow: -2px 4px 4px rgba(0, 0, 0, 0.2), inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 10px;
+    } 
+}
+
+.left, .right {
+    display: flex;
+}
+
