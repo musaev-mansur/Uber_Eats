@@ -2,7 +2,7 @@ import { Route } from 'react-router';
 import { Routes } from 'react-router-dom';
 import './App.scss';
 import './generalStyle/GeneralStyle.scss';
-import Authorization from './pages/Authorization';
+import Authorization from './pages/Authorization/Authorization';
 
 function App() {
   return (

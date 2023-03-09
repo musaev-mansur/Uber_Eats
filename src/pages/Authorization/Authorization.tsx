@@ -1,8 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { SubmitHandler } from "react-hook-form/dist/types";
-import Input from "../components/Input/Input";
-import { IAuth } from "../types/IUser";
+import Input from "../../components/Input/Input";
+import { IAuth } from "../../types/IUser";
 
 const Authorization = () => {
   const {
@@ -12,7 +11,7 @@ const Authorization = () => {
     reset,
   } = useForm<IAuth>( );
 
-  const onSubmit: SubmitHandler <IAuth> = (data: IAuth) => {
+  const onSubmit = (data: IAuth) => {
     alert(JSON.stringify(data));
     reset();
     return 
