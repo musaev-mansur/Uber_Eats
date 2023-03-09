@@ -1,4 +1,12 @@
+*{
+    color: white;
+}
 .greenBack {
   background: linear-gradient(0deg, #618967, #618967),
     linear-gradient(180deg, #618967 0%, #72a479 100%);
+}
+
+.Allbutton {
+    border: none;
+    border-radius: 10px;
 }
