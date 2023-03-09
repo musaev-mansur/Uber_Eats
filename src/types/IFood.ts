@@ -7,10 +7,8 @@ export interface IFood {
   price: number;
   cafeId: string;
   __v: number;
-  
-  }
-  
-  export type foodState = {
-    food: IFood[];
-  }
-  
+}
+
+export type foodState = {
+  food: IFood[];
+};
