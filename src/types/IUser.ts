@@ -6,9 +6,8 @@ export type userState = {
 
 export interface Ilogin {
   token: string;
-  username: string;
-  _id: string;
-  avatar: string;
+  id: string;
+  role: string;
 }
 
 export interface IAuth {

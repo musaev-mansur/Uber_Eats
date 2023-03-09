@@ -4,8 +4,12 @@ import Input from "../../components/Input/Input";
 import { IAuth } from "../../types/IUser";
 import {Link} from 'react-router-dom'
 import './Authorization.scss'
+import { useAppDispatch } from "../../hooks/hooks";
+import { signUpClient } from "../../store/reducers/user/userActions";
 
 const Registration = () => {
+
+  const dispatch = useAppDispatch()
   const {
     register,
     formState: { errors, isValid },
@@ -14,7 +18,8 @@ const Registration = () => {
   } = useForm<IAuth>( );
 
   const onSubmit = (data: IAuth) => {
-    alert(JSON.stringify(data));
+    dispatch(signUpClient(data))
+    
     reset();
   };
 
