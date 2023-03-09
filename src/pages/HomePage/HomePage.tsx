@@ -1,7 +1,7 @@
 import React from "react";
 import "./HomePage.scss"
-import Navbar from "../Navbar/Navbar";
-import TopCaffe from "../TopCaffe/TopCaffe";
+import Navbar from "../../components/Navbar/Navbar";
+import TopCaffe from "../../components/TopCaffe/TopCaffe";
 
 const HomePage = () => {
     

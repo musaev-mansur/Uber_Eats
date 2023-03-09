@@ -1,0 +1,56 @@
+.Registration {
+  max-width: 750px;
+  background: linear-gradient(90deg, #494544 0%, #504b4a 100%);
+  display: flex;
+  min-height: 1413px;
+  border-radius: 20px;
+  margin: 107px auto 94px;
+  padding: 41px 0 0 42px;
+
+  &__child {
+    width: 100%;
+  }
+
+  span {
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+  }
+
+  &__buttons {
+    width: 456px;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+  }
+
+  h1 {
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 54px;
+    margin: 40px 0 35px;
+  }
+
+  button {
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 27px;
+  }
+
+  label {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24px;
+  }
+
+  a {
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 17px;
+  }
+
+  &__submit {
+    margin-top: 36px;
+  }
+}

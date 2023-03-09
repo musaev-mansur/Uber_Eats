@@ -2,16 +2,37 @@
     color: white;
     font-family: 'Gilroy-Regular', sans-serif;
 }
+
 .greenBack {
   background: linear-gradient(0deg, #618967, #618967),
     linear-gradient(180deg, #618967 0%, #72a479 100%);
 }
 
 .blackBackground {
-    background: #403C3B;
+  background: #403c3b;
 }
 
 .Allbutton {
-    border: none;
-    border-radius: 10px;
+  border: none;
+  border-radius: 10px;
+  padding: 20px 56px;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 27px;
+}
+
+.FullButton {
+  height: 85px;
+  width: 224px;
+  border-radius: 10px;
+  border: none;
+  
+}
+
+.EmptyButton {
+  height: 85px;
+  width: 224px;
+  border-radius: 10px;
+  border: 1px solid rgba(97, 137, 103, 1);
+  background: none;
 }

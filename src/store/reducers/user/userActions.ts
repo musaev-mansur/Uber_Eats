@@ -1,6 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { baseService, cookies, setToken } from "../../../Api/api";
-import { Ilogin } from "../../../types/IUser";
+import { IAuth, Ilogin } from "../../../types/IUser";
 
 export const signIn = createAsyncThunk<
   Ilogin,
@@ -22,3 +22,11 @@ export const logOut = createAsyncThunk("get/user", async function () {
   setToken()
   return res.data;
 });
+
+export const signUpClient = createAsyncThunk<string, IAuth>(
+  'signUp/client', async function (clientsData) {
+    const res = await baseService.post(`/client/signup`, clientsData);
+    console.log(res)
+    return res.data
+  }
+)

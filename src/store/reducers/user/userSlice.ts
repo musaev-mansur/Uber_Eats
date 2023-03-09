@@ -6,9 +6,8 @@ import { logOut, signIn } from "./userActions";
 const initialState: userState = {
   currentUser: {
     token: cookies.get('token') || '',
-    username: "",
-    _id: "",
-    avatar: "",
+    id: "",
+    role: "",
   },
   isAuth: false,
   isLoading: false
