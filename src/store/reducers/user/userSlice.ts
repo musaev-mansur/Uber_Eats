@@ -55,31 +55,31 @@ export const todoSlice = createSlice({
     /* -------------------------------------------------------------------------------------------------------- */
 
     // регистрация кафе
-    builder.addCase(signUpCafe. pending, (state) => {
+    builder.addCase(signUpCafe.pending, (state) => {
       state.isLoading = true
     });
 
-    builder.addCase(signUpCafe. fulfilled, (state) => {
+    builder.addCase(signUpCafe.fulfilled, (state) => {
       state.isLoading = false
       window.location.href = '/sign-in'
     });
 
-    builder.addCase(signUpCafe. rejected, (state) => {
+    builder.addCase(signUpCafe.rejected, (state) => {
       state.isLoading = false
     });
     // /* -------------------------------------------------------------------------------------------------------- */
 
     // регистрация клиента
-    builder.addCase(signUpClient. pending, (state) => {
+    builder.addCase(signUpClient.pending, (state) => {
       state.isLoading = true
     });
 
-    builder.addCase(signUpClient. fulfilled, (state) => {
+    builder.addCase(signUpClient.fulfilled, (state) => {
       state.isLoading = false
       window.location.href = '/sign-in'
     });
 
-    builder.addCase(signUpClient. rejected, (state) => {
+    builder.addCase(signUpClient.rejected, (state) => {
       state.isLoading = false
     });
     // /* -------------------------------------------------------------------------------------------------------- */
