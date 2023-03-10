@@ -22,11 +22,11 @@ const Navbar = () => {
                 Контакты:
                 <p>+7 (917) 510-57-59</p>
             </div> 
-            <div className="basket greenBack">
+            <button className="basket greenBack">
                 <span className="basket-text">Корзина</span>
                 <hr />
                 <p><span className="number">4</span></p>
-            </div>
+            </button>
         </div>
       </div>
       <hr className="navbar-hr"/>

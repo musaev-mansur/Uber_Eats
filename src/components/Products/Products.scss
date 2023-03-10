@@ -1,0 +1,100 @@
+.nav, .footer, .products, .text {
+    display: flex;
+}
+
+
+.products {
+    flex-direction: column;
+    margin-top: 35px;
+    .text {
+        margin-left: 26px;
+        hr {
+            border: none;
+            margin-top: 16px;
+            width: 33px;
+            height: 4px;
+            background: #618967;
+            transform: rotate(90deg);
+        }
+        h2 {
+            height: 44px;
+            font-weight: 700;
+            font-size: 32px;
+            line-height: 44px;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+        }
+    }
+    .card {
+        margin-top: 40px;
+        margin-left: 37px;
+        background: linear-gradient(90deg, #494544 0%, #504B4A 100%);
+        border-radius: 10px;
+        width: 325px;
+        height: 385px;
+        > img {
+            margin-right: 16px;
+            width: 325px;
+            height: 227px;
+            border-radius: 10px 10px 0 0;
+        }
+        .card-info {
+            padding: 14px 16px 18px 20px;
+            .nav, .footer {
+                justify-content: space-between;
+                .name {
+                    font-weight: 700;
+                    font-size: 22px;
+                    line-height: 27px;
+                }
+                .weight {
+                    margin-top: 10px;
+                    font-size: 12px;
+                    line-height: 14px;
+                    color: #CFCFCF;
+                }
+            }
+            .description {
+                margin-top: 5px;
+                font-size: 13px;
+                line-height: 17px;
+                color: #CFCFCF;
+            }
+            .price {     
+                margin-top: 25px;
+                font-weight: 600;
+                font-size: 20px;
+                line-height: 24px;
+            }
+            button {
+                margin-top: 13px;
+                width: 137px;
+                height: 44px;
+                border-radius: 10px;
+                border: none;
+                img {
+                    margin-left: 15px;
+                    width: 18.5px;
+                    height: 15.41px;
+                }
+            }
+        }
+    }
+    .more {
+        margin: auto;
+        margin-top: 40px;
+        border: none;
+        cursor: pointer;
+        width: 720px;
+        height: 59px;
+        font-weight: 600;
+        font-size: 25px;
+        line-height: 30px;
+        border-radius: 15px;
+    }
+}
+
+.products-hr {
+    margin-top: 48px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}

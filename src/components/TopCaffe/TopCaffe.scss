@@ -6,6 +6,7 @@
         display: flex;
         margin-left: 26px;
         hr {
+            border: none;
             margin-top: 16px;
             width: 33px;
             height: 4px;
@@ -33,6 +34,8 @@
     .more {
         margin: auto;
         margin-top: 40px;
+        border: none;
+        cursor: pointer;
         width: 720px;
         height: 59px;
         font-weight: 600;
@@ -40,9 +43,4 @@
         line-height: 30px;
         border-radius: 15px;
     }
-}
-
-.top-cafe-hr {
-    margin-top: 48px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
 }

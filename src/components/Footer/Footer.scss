@@ -1,0 +1,45 @@
+.footers {
+    margin-top: 45px;
+    display: flex;
+    height: 195px;
+    .anchor {
+        margin: 51px 55px 0 40px;
+        background: #FFFFFF;
+        width: 64px;
+        height: 64px;
+        border-radius: 35px;
+        > img {
+            margin: 25px 0px 0px 20px;
+        }
+    }
+    .about {
+        margin-top: 25px;
+        .rights {
+            margin: 10px 0 10px 0;
+            width: 189px;
+            height: 28px;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 14px;
+            color: #CFCFCF;
+        }
+        > p {
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 16px;
+            width: 210px;
+            height: 30px;
+        }
+    }
+    .info {
+        display: flex;
+        margin-top: 87px;
+        margin-left: 157px;
+        P {
+            margin-right: 40px;
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 24px;
+        }
+    }
+}

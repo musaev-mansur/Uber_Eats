@@ -19,7 +19,6 @@ const TopCaffe = () => {
             <button className="more greenBack">Показать больше</button>
 
         </div>
-        <hr className="top-cafe-hr"/>
     </>
   );
 };
