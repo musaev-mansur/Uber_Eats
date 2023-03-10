@@ -30,3 +30,11 @@ export const signUpClient = createAsyncThunk<string, IAuth>(
     return res.data
   }
 )
+
+export const signUpCafe = createAsyncThunk<string, IAuth>(
+  'signUp/cafe', async function (cafeData) {
+    const res = await baseService.post(`/cafe/signup`, cafeData);
+    console.log(res)
+    return res.data
+  }
+)
