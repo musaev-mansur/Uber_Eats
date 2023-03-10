@@ -1,7 +1,7 @@
 import { createSlice,} from "@reduxjs/toolkit";
 import { cookies } from "../../../Api/api";
 import { userState } from "../../../types/IUser";
-import { logOut, signIn, signUpCafe, signUpClient } from "./userActions";
+import { logOut, logIn, signUpCafe, signUpClient } from "./userActions";
 
 const initialState: userState = {
   currentUser: {
@@ -9,6 +9,7 @@ const initialState: userState = {
     id: "",
     role: "",
   },
+  
   isAuth: false,
   isLoading: false
 };
@@ -20,17 +21,17 @@ export const todoSlice = createSlice({
   extraReducers: (builder) => {
     
     // авторизация
-    builder.addCase(signIn.pending, (state) => {
+    builder.addCase(logIn.pending, (state) => {
       state.isLoading = true
     });
 
-    builder.addCase(signIn.fulfilled, (state, action) => {
+    builder.addCase(logIn.fulfilled, (state, action) => {
       state.isAuth = true;
       state.isLoading = false;
       state.currentUser = action.payload
     });
 
-    builder.addCase(signIn.rejected, (state, action) => {
+    builder.addCase(logIn.rejected, (state, action) => {
       state.isAuth = false;
     });
      /* -------------------------------------------------------------------------------------------------------- */

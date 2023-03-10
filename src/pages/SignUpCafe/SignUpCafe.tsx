@@ -1,7 +1,7 @@
 import React from "react";
 import Input from "../../components/Input/Input";
 import { useAppDispatch } from "../../hooks/hooks";
-import { IAuth } from "../../types/IUser";
+import { ISignUp } from "../../types/IUser";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { signUpCafe } from "../../store/reducers/user/userActions";
@@ -13,9 +13,9 @@ const SignUpCafe = () => {
     formState: { errors, isValid },
     handleSubmit,
     reset,
-  } = useForm<IAuth>();
+  } = useForm<ISignUp>();
 
-  const onSubmit = (data: IAuth) => {
+  const onSubmit = (data: ISignUp) => {
     dispatch(signUpCafe(data));
     reset();
   };

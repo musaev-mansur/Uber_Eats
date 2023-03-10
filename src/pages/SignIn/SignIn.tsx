@@ -1,11 +1,11 @@
 import React from "react";
 import Input from "../../components/Input/Input";
-import { useAppDispatch } from "../../hooks/hooks";
-import { IAuth } from "../../types/IUser";
-import { Link } from "react-router-dom";
+import { useAppDispatch, useAppSelector } from "../../hooks/hooks";
+import { ILogIn } from "../../types/IUser";
+import { Link, Navigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import { signUpCafe } from "../../store/reducers/user/userActions";
 import './SignIn.scss'
+import { logIn } from "../../store/reducers/user/userActions";
 
 const SignIn = () => {
   const dispatch = useAppDispatch();
@@ -14,12 +14,14 @@ const SignIn = () => {
     formState: { errors, isValid },
     handleSubmit,
     reset,
-  } = useForm<IAuth>();
+  } = useForm<ILogIn>();
 
-  const onSubmit = (data: IAuth) => {
-    dispatch(signUpCafe(data));
+  const onSubmit = (data: ILogIn) => {
+    dispatch(logIn(data));
     reset();
   };
+ 
+  const { isAuth } = useAppSelector(state => state.user)
 
   return (
     <div className=" Auth ">
@@ -47,9 +49,10 @@ const SignIn = () => {
           >Войти</button>
         </form>
          <span>
-            Нет аккаунта?   <Link to="/sign-in">Зарегистрироваться</Link>
+            Нет аккаунта?   <Link to="/client/sign-up">Зарегистрироваться</Link>
           </span>
       </div>
+      {isAuth && <Navigate to='/'/>}
     </div>
   );
 };

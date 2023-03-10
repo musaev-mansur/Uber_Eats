@@ -1,8 +1,8 @@
 export type userState = {
-  currentUser: Ilogin,
-  isAuth: boolean
-  isLoading: boolean
-}
+  currentUser: Ilogin;
+  isAuth: boolean;
+  isLoading: boolean;
+};
 
 export interface Ilogin {
   token: string;
@@ -10,13 +10,16 @@ export interface Ilogin {
   role: string;
 }
 
-export interface IAuth {
-    name: string;
-    phone: string;
-    city: string; 
-    address: string;
-    mail: string;
-    password: string;
+export interface ISignUp {
+  name: string;
+  phone: string;
+  city: string;
+  address: string;
+  mail: string;
+  password: string;
 }
 
-
+export interface ILogIn {
+  mail: string;
+  password: string;
+}
