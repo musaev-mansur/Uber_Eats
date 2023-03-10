@@ -1,7 +1,7 @@
 import { createSlice,} from "@reduxjs/toolkit";
 import { cookies } from "../../../Api/api";
 import { userState } from "../../../types/IUser";
-import { logOut, signIn } from "./userActions";
+import { logOut, signIn, signUpCafe, signUpClient } from "./userActions";
 
 const initialState: userState = {
   currentUser: {
@@ -51,7 +51,44 @@ export const todoSlice = createSlice({
       cookies.remove('token')
       state.isLoading = false
     });
+    /* -------------------------------------------------------------------------------------------------------- */
+
+    // регистрация кафе
+    builder.addCase(signUpCafe. pending, (state) => {
+      state.isLoading = true
+    });
+
+    builder.addCase(signUpCafe. fulfilled, (state) => {
+      state.isLoading = false
+      window.location.href = '/sign-in'
+    });
+
+    builder.addCase(signUpCafe. rejected, (state) => {
+      state.isLoading = false
+    });
+    // /* -------------------------------------------------------------------------------------------------------- */
+
+    // регистрация клиента
+    builder.addCase(signUpClient. pending, (state) => {
+      state.isLoading = true
+    });
+
+    builder.addCase(signUpClient. fulfilled, (state) => {
+      state.isLoading = false
+      window.location.href = '/sign-in'
+    });
+
+    builder.addCase(signUpClient. rejected, (state) => {
+      state.isLoading = false
+    });
+    // /* -------------------------------------------------------------------------------------------------------- */
+
+    //
+
   },
+
    /* -------------------------------------------------------------------------------------------------------- */
+
+   
 });
 export default todoSlice.reducer;
