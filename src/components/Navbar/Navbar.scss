@@ -73,6 +73,9 @@
             transform: rotate(90deg);
         }
         p {
+            display: grid;
+            place-items: center;
+            align-items: center;
             position: absolute;
             right: 9px;
             margin: 14px 0 0 0;

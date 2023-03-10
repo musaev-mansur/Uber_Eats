@@ -1,0 +1,137 @@
+.delivery{
+    .menu {
+        display: flex;
+        height: 78px;
+        justify-content: center;
+        gap: 44px;
+        > p{
+            margin-top: 29px;
+            font-size: 18px;
+            line-height: 21px;
+            color: #CFCFCF;
+        }
+    }
+    .text {
+        margin: 50px 0 42px 26px;
+        hr {
+            border: none;
+            margin-top: 16px;
+            width: 33px;
+            height: 4px;
+            background: #618967;
+            transform: rotate(90deg);
+        }
+        h2 {
+            height: 44px;
+            font-weight: 700;
+            font-size: 32px;
+            line-height: 44px;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+        }
+    }
+    .main {
+        display: flex;
+        margin-left: 45px;
+        .maps {
+            margin-right: 10px;
+        }
+        details {
+            margin-bottom: 10px;
+            summary {
+                position: relative;
+                z-index: 9999;
+                display: flex;
+                width: 618px;
+                height: 68px;
+                border-radius: 10px;
+                justify-content: space-between;
+                p {
+                    padding: 16px 0 0 30px;
+                    font-weight: 500;
+                    font-size: 18px;
+                    line-height: 35px;
+                }
+            }
+            summary::marker {
+                content: none;
+            }
+            summary::after {
+                margin: 25px 25px 0 0;
+                content: url('../../images/arrow-white.png');
+                transition: transform 0.3s ease-in-out;
+            }
+              
+            summary[open]::after {
+                transform: rotate(180deg);
+            }
+            > div {
+                margin-top: -20px;
+                border-radius: 0 0 10px 10px;
+                background: linear-gradient(90deg, #494544 0%, #504B4A 100%);
+                width: 618px;
+                height: 152px;
+                > p{
+                    padding: 37px 0 0 30px;
+                    width: 547px;
+                    height: 75px;
+                    font-size: 16px;
+                    line-height: 25px;
+                }
+            }
+        }
+    }
+    img {
+        width: 639px;
+        height: 610px;
+        filter: drop-shadow(0px 40px 40px rgba(43, 40, 40, 0.6));
+    }
+    .schedule {
+        margin-top: 30px;
+        margin-left: 45px;
+        display: flex;
+        .left, .right {
+            margin-right: 100px;
+            display: flex;
+            flex-direction: column;
+            width: 267px;
+            height: 71px;
+            > p {
+                font-weight: 700;
+                font-size: 22px;
+                line-height: 35px;
+            }
+            > span {
+                color: #CFCFCF;
+                font-size: 22px;
+                line-height: 35px;
+            }
+        }
+    }
+    .min-order {
+        margin-top: 40px;
+        margin-left: 45px;
+        > p{
+            margin-bottom: 10px;
+            font-weight: 700;
+            font-size: 22px;
+            line-height: 35px;
+        }
+        div {
+            margin-bottom: 37px;
+            width: 697px;
+            height: 105px;
+            > span {
+                font-size: 22px;
+                line-height: 35px;
+                color: #CFCFCF;
+            }
+        }
+    }
+
+}
+
+
+.delivery-hr {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}

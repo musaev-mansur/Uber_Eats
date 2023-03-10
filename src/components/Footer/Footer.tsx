@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import arrow from "../../images/arrow.png"
 import logos from "../../images/logos.png"
 import "./Footer.scss"
@@ -19,7 +20,9 @@ const Footer = () => {
         </div>
         <div className="info">
             <p>О ресторане</p>
-            <p>Условия доставки</p>
+            <Link to="/delivery">
+              <a href="#">Условия доставки</a>
+            </Link>
             <p>Возврат товара</p>
             <p>Акции</p>
         </div>
