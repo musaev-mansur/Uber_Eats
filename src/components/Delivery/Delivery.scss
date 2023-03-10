@@ -38,9 +38,12 @@
         }
         details {
             margin-bottom: 10px;
+            &[open] > summary::after {
+                transform: rotate(180deg);
+            }
             summary {
                 position: relative;
-                z-index: 9999;
+                z-index: 2;
                 display: flex;
                 width: 618px;
                 height: 68px;
@@ -52,18 +55,15 @@
                     font-size: 18px;
                     line-height: 35px;
                 }
-            }
-            summary::marker {
-                content: none;
-            }
-            summary::after {
-                margin: 25px 25px 0 0;
-                content: url('../../images/arrow-white.png');
-                transition: transform 0.3s ease-in-out;
-            }
-              
-            summary[open]::after {
-                transform: rotate(180deg);
+                &::marker {
+                    content: none;
+                }
+                &::after {
+                    width: 16px;
+                    height: 16px;
+                    margin: 25px 25px 0 0;
+                    content: url('../../images/arrow-white.png');
+                }
             }
             > div {
                 margin-top: -20px;
