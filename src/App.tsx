@@ -9,13 +9,15 @@ import SignIn from './pages/SignIn/SignIn';
 import SignUpCafe from './pages/SignUpCafe/SignUpCafe';
 import SignUpClient from './pages/SignUpClient/SignUpClient';
 import Profile from './pages/Profile/Profile';
+import { logOut } from './store/reducers/user/userActions';
+import { useEffect } from 'react';
 
 function App() {
-  // const dispatch = useAppDispatch();
+  const dispatch = useAppDispatch();
 
-  // useEffect(() => {
-  //   dispatch(logOut());
-  // }, [dispatch]);
+  useEffect(() => {
+    dispatch(logOut());
+  }, []);
 
   return (
     <div className="App">

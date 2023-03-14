@@ -1,24 +1,25 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { baseService, cookies, setToken } from "../../../Api/api";
-import { ISignUp, Ilogin, ILogIn } from "../../../types/IUser";
+import { ISignUp, IUserData, ILogIn } from "../../../types/IUser";
 
 export const logIn = createAsyncThunk<
-  Ilogin,
+  IUserData,
   ILogIn
 >("sign/in", async function (userData) {
   const res = await baseService.post(`/signin`, userData);
   cookies.set('token', res.data.token)
+  cookies.set('data', res.data)
   setToken()
-  console.log(res)
   return res.data;
 });
 
 export const logOut = createAsyncThunk("get/user", async function () {
-  const res = await baseService.get(`/user`, {
-    headers: { Authorization: `Bearer ${cookies.get("token")}` },
+  const data = cookies.get('data')
+  const res = await baseService.get(`/${data.role}/profile/user`, {
+    headers: { Authorization: `Bearer ${data.token}` },
   });
   setToken()
-  return res.data;
+  return data;
 });
 
 export const signUpClient = createAsyncThunk<string, ISignUp>(

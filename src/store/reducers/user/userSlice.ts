@@ -50,6 +50,7 @@ export const todoSlice = createSlice({
     
     builder.addCase(logOut.rejected, (state) => {
       cookies.remove('token')
+      cookies.remove('data')
       state.isLoading = false
     });
     /* -------------------------------------------------------------------------------------------------------- */
@@ -57,30 +58,39 @@ export const todoSlice = createSlice({
     // регистрация кафе
     builder.addCase(signUpCafe.pending, (state) => {
       state.isLoading = true
+      state.isAuth = false
     });
 
     builder.addCase(signUpCafe.fulfilled, (state) => {
       state.isLoading = false
+      state.isAuth = true
       window.location.href = '/sign-in'
     });
 
     builder.addCase(signUpCafe.rejected, (state) => {
       state.isLoading = false
+      state.isAuth = false
+
+
     });
     // /* -------------------------------------------------------------------------------------------------------- */
 
     // регистрация клиента
     builder.addCase(signUpClient.pending, (state) => {
       state.isLoading = true
+      state.isAuth = false
     });
 
     builder.addCase(signUpClient.fulfilled, (state) => {
       state.isLoading = false
+      state.isAuth = true
       window.location.href = '/sign-in'
     });
 
     builder.addCase(signUpClient.rejected, (state) => {
       state.isLoading = false
+      state.isAuth = false
+      
     });
     // /* -------------------------------------------------------------------------------------------------------- */
 
