@@ -10,7 +10,9 @@ import { userApi } from "../../store/reducers/servise/userServise";
 const Navbar = () => {
   const { role } = useAppSelector((state) => state.user.currentUser);
   const { isAuth } = useAppSelector((state) => state.user);
-  const { data } = userApi.useGetUserQuery(role)
+  const { data } = userApi.useGetUserQuery(role);
+
+  console.log(data);
 
   return (
     <>
@@ -32,21 +34,15 @@ const Navbar = () => {
             <p>+7 (917) 510-57-59</p>
           </div>
           <div className="profile">
-              {isAuth ? (
-                <button>Выйти</button>
-              ) : (
-                <img src={profile} alt="" />
-              )}
+            <img src={profile} alt="" />
             <hr />
-            <p>
-              {isAuth ? (
-                `${data?.name}`
-              ) : (
-                <Link className="turn-off" to="/sign-in">
-                  Войти
-                </Link>
-              )}
-            </p>
+            {data?.name ? (
+              `${data?.name}`
+            ) : (
+              <Link className="turn-off" to="/sign-in">
+                Войти
+              </Link>
+            )}
           </div>
           <button className="basket greenBack">
             <span className="basket-text">Корзина</span>
