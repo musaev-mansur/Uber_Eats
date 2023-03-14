@@ -8,10 +8,10 @@ import { Link } from "react-router-dom";
 import { userApi } from "../../store/reducers/servise/userServise";
 
 const Navbar = () => {
-
   const { role } = useAppSelector((state) => state.user.currentUser);
-    const { data } = userApi.useGetUserQuery(role)
-    
+  const { isAuth } = useAppSelector((state) => state.user);
+  const { data } = userApi.useGetUserQuery(role);
+
   console.log(data);
 
   return (
@@ -36,15 +36,13 @@ const Navbar = () => {
           <div className="profile">
             <img src={profile} alt="" />
             <hr />
-            <a href="">
-              {data?.name ? (
-                `${data?.name}`
-              ) : (
-                <Link className="turn-off" to="/sign-in">
-                  Войти
-                </Link>
-              )}
-            </a>
+            {data?.name ? (
+              `${data?.name}`
+            ) : (
+              <Link className="turn-off" to="/sign-in">
+                Войти
+              </Link>
+            )}
           </div>
           <button className="basket greenBack">
             <span className="basket-text">Корзина</span>

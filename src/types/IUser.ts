@@ -1,10 +1,10 @@
 export type userState = {
-  currentUser: Ilogin;
+  currentUser: IUserData;
   isAuth: boolean;
   isLoading: boolean;
 };
 
-export interface Ilogin {
+export interface IUserData {
   token: string;
   id: string;
   role: string;
