@@ -1,8 +1,10 @@
 import axios from "axios"
 import Cookies from "universal-cookie"
 
+export const baseURL = 'https://unifood.onrender.com'
+
  export const baseService = axios.create({
-    baseURL: 'https://unifood.onrender.com'
+    baseURL: baseURL
  })
 
  export const cookies = new Cookies;
