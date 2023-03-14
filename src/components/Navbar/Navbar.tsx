@@ -8,9 +8,11 @@ import { Link } from "react-router-dom";
 import { userApi } from "../../store/reducers/servise/userServise";
 
 const Navbar = () => {
-  const { data } = userApi.useGetUserQuery("")
+
+  const { role } = useAppSelector((state) => state.user.currentUser);
+    const { data } = userApi.useGetUserQuery(role)
+    
   console.log(data);
-  
 
   return (
     <>
