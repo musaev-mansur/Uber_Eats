@@ -1,0 +1,33 @@
+.userImage {
+    position: relative;
+    height: 162px;
+    width: 242px;
+    border-radius: 10px;
+    overflow: hidden;
+  
+    &::after {
+      content: "";
+      position: absolute;
+      width: 75px;
+      height: 75px;
+      border-radius: 50%;
+      border: solid 6px black;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: -1;
+    }
+  
+    &::before {
+      content: "";
+      position: absolute;
+      width: 125px;
+      height: 125px;
+      border-radius: 50%;
+      border: solid 6px black;
+      left: 50%;
+      top: 115%;
+      transform: translate(-50%, -50%);
+      z-index: -1;
+    }
+  }

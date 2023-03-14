@@ -28,6 +28,7 @@ export interface IProfileUserData
 {
   _id: string;
   name: string
+  image: string
   phone: string
   city: string
   address: string
