@@ -6,7 +6,7 @@ const initialState: foodState = {
   food: [],
 };
 
-export const postSlice = createSlice({
+export const foodSlice = createSlice({
   name: "posts",
   initialState,
   reducers: {},
@@ -14,5 +14,5 @@ export const postSlice = createSlice({
 
 }});
 
-export default postSlice.reducer;
+export default foodSlice.reducer;
 
