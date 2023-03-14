@@ -12,3 +12,26 @@ img {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+.Loader{
+  position: absolute;
+  width: 100%;
+  min-height: 100vh;
+  background-color: rgba($color: black, $alpha: 0.75);
+  display: grid;
+  place-items: center;
+  z-index: 2;
+  font-size: 100px;
+  color: white;
+  left: 0;
+  top: 0;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

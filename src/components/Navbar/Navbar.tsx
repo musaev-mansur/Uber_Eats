@@ -1,18 +1,25 @@
 import React from "react";
-import { useAppSelector } from "../../hooks/hooks";
+import { useAppDispatch, useAppSelector } from "../../hooks/hooks";
 import logos from "../../images/logos.png";
 import profile from "../../images/profile.png";
 import calling from "../../images/calling.png";
 import "./Navbar.scss";
 import { Link } from "react-router-dom";
 import { userApi } from "../../store/reducers/servise/userServise";
+import { forcedLogOut } from "../../store/reducers/user/userSlice";
 
 const Navbar = () => {
+  const dispatch = useAppDispatch()
   const { role } = useAppSelector((state) => state.user.currentUser);
   const { isAuth } = useAppSelector((state) => state.user);
   const { data } = userApi.useGetUserQuery(role);
 
   console.log(data);
+
+  const handleClick = () => {
+    dispatch(forcedLogOut())
+    console.log(2)
+  };
 
   return (
     <>
@@ -34,7 +41,7 @@ const Navbar = () => {
             <p>+7 (917) 510-57-59</p>
           </div>
           <div className="profile">
-            <img src={profile} alt="" />
+            <img onClick={handleClick} src={profile} alt="" />
             <hr />
             {data?.name ? (
               `${data?.name}`

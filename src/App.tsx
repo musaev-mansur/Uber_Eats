@@ -1,6 +1,6 @@
-import { Route } from 'react-router';
+import { Route, useActionData } from 'react-router';
 import { Routes } from 'react-router-dom';
-import { useAppDispatch } from "./hooks/hooks";
+import { useAppDispatch, useAppSelector } from "./hooks/hooks";
 import './App.scss';
 import './generalStyle/GeneralStyle.scss';
 import HomePage from './pages/HomePage/HomePage';
@@ -13,7 +13,9 @@ import { logOut } from './store/reducers/user/userActions';
 import { useEffect } from 'react';
 
 function App() {
+  
   const dispatch = useAppDispatch();
+  const {isLoading } = useAppSelector(state => state.user)
 
   useEffect(() => {
     dispatch(logOut());
@@ -21,6 +23,9 @@ function App() {
 
   return (
     <div className="App">
+      {isLoading && <div className="Loader">
+        <div>Loading...</div>
+        </div>}
       <Routes >
         <Route path='/' element={<HomePage />}/>
         <Route path='/delivery' element={<Delivery />}/>

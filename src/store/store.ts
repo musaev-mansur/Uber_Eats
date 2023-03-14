@@ -1,12 +1,12 @@
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
 import { curryGetDefaultMiddleware } from "@reduxjs/toolkit/dist/getDefaultMiddleware";
-import PostsSlice from "./reducers/food/foodSlice";
+import foodSlice from "./reducers/food/foodSlice";
 import { userApi } from "./reducers/servise/userServise";
 import userSlice from "./reducers/user/userSlice";
 
 const rootReducer = combineReducers({
   user: userSlice,
-  posts: PostsSlice,
+  food: foodSlice,
   userApi: userApi.reducer,
 });
 

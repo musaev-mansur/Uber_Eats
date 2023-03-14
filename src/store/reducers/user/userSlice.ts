@@ -14,10 +14,19 @@ const initialState: userState = {
   isLoading: false
 };
 
-export const todoSlice = createSlice({
+export const userSlice = createSlice({
   name: "user",
   initialState,
-  reducers: {},
+  reducers: {
+    forcedLogOut: (state) => {
+      console.log(1)
+      state.isAuth = false;
+      state.currentUser.id = ''
+      state.currentUser.role = ''
+      cookies.remove('token');
+      cookies.remove('data');
+    }
+  },
   extraReducers: (builder) => {
     
     // авторизация
@@ -33,6 +42,7 @@ export const todoSlice = createSlice({
 
     builder.addCase(logIn.rejected, (state, action) => {
       state.isAuth = false;
+      state.isLoading = false
     });
      /* -------------------------------------------------------------------------------------------------------- */
 
@@ -93,13 +103,11 @@ export const todoSlice = createSlice({
       
     });
     // /* -------------------------------------------------------------------------------------------------------- */
-
-    //
-
   },
-
-   /* -------------------------------------------------------------------------------------------------------- */
-
    
 });
-export default todoSlice.reducer;
+
+export const { forcedLogOut } = userSlice.actions
+
+export default userSlice.reducer;
+
