@@ -5,10 +5,14 @@ import profile from "../../images/profile.png";
 import calling from "../../images/calling.png";
 import "./Navbar.scss";
 import { Link } from "react-router-dom";
+import { userApi } from "../../store/reducers/servise/userServise";
 
 const Navbar = () => {
-  
-  const { currentUser } = useAppSelector((state) => state.user);
+
+  const { role } = useAppSelector((state) => state.user.currentUser);
+    const { data } = userApi.useGetUserQuery(role)
+    
+  console.log(data);
 
   return (
     <>
@@ -31,9 +35,10 @@ const Navbar = () => {
           </div>
           <div className="profile">
             <img src={profile} alt="" />
+            <hr />
             <a href="">
-              {currentUser.role ? (
-                `${currentUser.role}`
+              {data?.name ? (
+                `${data?.name}`
               ) : (
                 <Link className="turn-off" to="/sign-in">
                   Войти
@@ -49,11 +54,11 @@ const Navbar = () => {
             </p>
           </button>
 
-          {currentUser.id && (
+          {data?._id && (
             <button className="personal greenBack">
               <span>
-                {currentUser.id ? (
-                  <Link className="turn-off" to={`/profile/${currentUser.id}`}>
+                {data?._id ? (
+                  <Link className="turn-off" to={`/profile/${data?._id}`}>
                     Личный кабинет
                   </Link>
                 ) : (
