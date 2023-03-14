@@ -54,12 +54,14 @@
     }
     .profile {
         display: flex;
-        margin-top: 30px;
         > button {
+            cursor: pointer;
+            color: #cf4646;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 21px;
             border: none;
             background: none;
-            width: 35px;
-            height: 35px;
         }
         > img {
             margin-top: 10px;
@@ -68,14 +70,14 @@
         }
         > hr {
             border: none;
-            margin-top: 16px;
+            margin-top: 47px;
             width: 52px;
             height: 4px;
             background: #635C5A;
             transform: rotate(90deg);
         }
         > p {
-            margin-top: 10px;
+            margin-top: 40px;
             text-decoration: none;
             display: inline-block;
             height: 40px;

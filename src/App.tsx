@@ -11,6 +11,8 @@ import SignUpClient from './pages/SignUpClient/SignUpClient';
 import Profile from './pages/Profile/Profile';
 import { logOut } from './store/reducers/user/userActions';
 import { useEffect } from 'react';
+import Menu from './pages/Profile/Menu/Menu';
+import Information from './pages/Profile/Information/Information';
 
 function App() {
   
@@ -33,6 +35,8 @@ function App() {
         <Route path='/cafe/sign-up' element={ <SignUpCafe />}/>
         <Route path='/sign-in' element={ <SignIn />}/>
         <Route path='/profile/:id' element={ <Profile />}/>
+        <Route path='/menu/:id' element={ <Menu />}/>
+        <Route path='/information/:id' element={ <Information />}/>
       </Routes>
     </div>
   );
