@@ -7,6 +7,7 @@ import "./Navbar.scss";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
+  
   const { currentUser } = useAppSelector((state) => state.user);
 
   return (

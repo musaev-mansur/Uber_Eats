@@ -7,8 +7,8 @@ export const userApi = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: baseURL }),
   endpoints: (builder) => ({
     getUser: builder.query<IProfileUserData, string>({
-      query: () => ({
-        url: `/cafe/profile/user`,
+      query: (role) => ({
+        url: `/${role}/profile/user`,
         headers: { Authorization: `Bearer ${cookies.get("token")}` },
       }),
     }),
