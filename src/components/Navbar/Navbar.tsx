@@ -8,9 +8,9 @@ import { Link } from "react-router-dom";
 import { userApi } from "../../store/reducers/servise/userServise";
 
 const Navbar = () => {
-  const { data } = userApi.useGetUserQuery("")
-  console.log(data);
-  
+  const { role } = useAppSelector((state) => state.user.currentUser);
+  const { isAuth } = useAppSelector((state) => state.user);
+  const { data } = userApi.useGetUserQuery(role)
 
   return (
     <>
@@ -32,17 +32,21 @@ const Navbar = () => {
             <p>+7 (917) 510-57-59</p>
           </div>
           <div className="profile">
-            <img src={profile} alt="" />
+              {isAuth ? (
+                <button>Выйти</button>
+              ) : (
+                <img src={profile} alt="" />
+              )}
             <hr />
-            <a href="">
-              {data?.name ? (
+            <p>
+              {isAuth ? (
                 `${data?.name}`
               ) : (
                 <Link className="turn-off" to="/sign-in">
                   Войти
                 </Link>
               )}
-            </a>
+            </p>
           </div>
           <button className="basket greenBack">
             <span className="basket-text">Корзина</span>
