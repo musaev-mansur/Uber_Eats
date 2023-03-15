@@ -7,3 +7,16 @@ export const getFood = createAsyncThunk("food/upload", async function () {
   return res.data;
 });
 
+export const updateFood = createAsyncThunk(
+  "food/update",
+  async ({ _id, food }: { _id: string, food: IFood }, thunkAPI) => {
+    try {
+      const res = await baseService.patch(`/cafe/${_id}`, food, { 
+        headers: { 'Authorization': `Bearer ${cookies.get('token')}` } 
+      });
+      return res.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error);
+    }
+  }
+);

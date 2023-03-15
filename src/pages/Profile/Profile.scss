@@ -1,33 +1,151 @@
-.userImage {
-    position: relative;
-    height: 162px;
-    width: 242px;
-    border-radius: 10px;
-    overflow: hidden;
-  
-    &::after {
-      content: "";
-      position: absolute;
-      width: 75px;
-      height: 75px;
-      border-radius: 50%;
-      border: solid 6px black;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: -1;
+.profile {
+    display: flex;
+    .left-profile {
+        display: flex;
+        flex-direction: column;
+        .text {
+            margin: 45px 0px 45px 85px;
+            hr {
+                border: none;
+                margin-top: 20px;
+                width: 38px;
+                height: 6px;
+                background: #618967;
+                transform: rotate(90deg);
+            }
+            h2 {
+                height: 44px;
+                font-weight: 700;
+                font-size: 36px;
+                line-height: 49px;
+                letter-spacing: 0.03em;
+            }
+        }
+        .bookings {
+            margin-bottom: 16px;
+            display: flex;
+            width: 892px;
+            height: 130px;
+            background: #504B4A;
+            .order {
+                margin: 28px 0 0 24px;
+                display: flex;
+                flex-direction: column;
+                & p, span {
+                    font-weight: 700;
+                    font-size: 26px;
+                    line-height: 35px;
+                    letter-spacing: 0.03em;
+                } 
+            }
+            .time {
+                margin: 55px 0px 0px 45px;
+                font-weight: 600;
+                font-size: 16px;
+                line-height: 22px;
+                letter-spacing: 0.03em;
+            }
+            .status {
+                margin: 60px 0px 0px 40px;
+                font-weight: 600;
+                font-size: 14px;
+                line-height: 19px;
+                letter-spacing: 0.03em;
+                & span {
+                    color: #618967;
+                }
+            }
+            .price-order {
+                margin: 50px 0px 0px 50px;
+                font-weight: 600;
+                font-size: 26px;
+                line-height: 35px;
+                letter-spacing: 0.03em;
+            }
+            .circle {
+                margin: 50px 0px 0px 40px;
+                cursor: pointer;
+                width: 32px;
+                height: 32px;
+                border-radius: 16px;
+                text-align: center;
+                img {
+                    width: 13.74px;
+                    margin-top: 10px;
+                    height: 13.49px;
+                }
+            }
+        }
     }
-  
-    &::before {
-      content: "";
-      position: absolute;
-      width: 125px;
-      height: 125px;
-      border-radius: 50%;
-      border: solid 6px black;
-      left: 50%;
-      top: 115%;
-      transform: translate(-50%, -50%);
-      z-index: -1;
+    .right-profile {
+        margin-top: 30px;
+        margin-left: 43px;
+        display: flex;
+        flex-direction: column;
+        .userImage {
+            place-self: center;
+            position: relative;
+            height: 162px;
+            width: 242px;
+            border-radius: 10px;
+            overflow: hidden;
+            > img {
+                object-fit: contain;
+                width: 242px;
+                height: 162px;
+            }
+          
+            &::after {
+              content: "";
+              position: absolute;
+              width: 75px;
+              height: 75px;
+              border-radius: 50%;
+              border: solid 6px black;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              z-index: -1;
+            }
+          
+            &::before {
+              content: "";
+              position: absolute;
+              width: 125px;
+              height: 125px;
+              border-radius: 50%;
+              border: solid 6px black;
+              left: 50%;
+              top: 115%;
+              transform: translate(-50%, -50%);
+              z-index: -1;
+            }
+        }
+        > p {
+            padding: 15px;
+            text-align: center;
+            font-weight: 700;
+            font-size: 32px;
+            line-height: 44px; 
+        }
     }
-  }
+    .booking-links {
+        display: flex;
+        flex-direction: column;
+        .button {
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            margin-bottom: 10px;
+            padding: 15px 25px 15px 25px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 28px;
+            line-height: 38px;
+            letter-spacing: 0.03em;
+        }
+        .active {
+            background: linear-gradient(114.93deg, #618967 5.11%, #72A479 94%);
+        }
+    }
+}

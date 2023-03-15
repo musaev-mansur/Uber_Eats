@@ -14,8 +14,6 @@ const Navbar = () => {
   const { isAuth } = useAppSelector((state) => state.user);
   const { data } = userApi.useGetUserQuery(role);
 
-  console.log(data);
-
   const handleClick = () => {
     dispatch(forcedLogOut())
     console.log(2)
@@ -41,10 +39,14 @@ const Navbar = () => {
             <p>+7 (917) 510-57-59</p>
           </div>
           <div className="profile">
-            <img onClick={handleClick} src={profile} alt="" />
+            {isAuth ? (
+              <button onClick={handleClick}>Выйти </button>
+            ) : (
+              <img src={profile} alt="" />
+            )}
             <hr />
-            {data?.name ? (
-              `${data?.name}`
+            {isAuth ? (
+              <p>{data?.name}</p>
             ) : (
               <Link className="turn-off" to="/sign-in">
                 Войти
@@ -59,7 +61,7 @@ const Navbar = () => {
             </p>
           </button>
 
-          {data?._id && (
+          {isAuth && (
             <button className="personal greenBack">
               <span>
                 {data?._id ? (
