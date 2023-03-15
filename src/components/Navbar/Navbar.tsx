@@ -14,8 +14,6 @@ const Navbar = () => {
   const { isAuth } = useAppSelector((state) => state.user);
   const { data } = userApi.useGetUserQuery(role);
 
-  console.log(data);
-
   const handleClick = () => {
     dispatch(forcedLogOut())
     console.log(2)

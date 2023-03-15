@@ -36,7 +36,7 @@ function App() {
         <Route path='/sign-in' element={ <SignIn />}/>
         <Route path='/profile/:id' element={ <Profile />}/>
         <Route path='/menu/:id' element={ <Menu />}/>
-        <Route path='/information/:id' element={ <Information />}/>
+        <Route path='/cafe/:id' element={ <Information />}/>
       </Routes>
     </div>
   );

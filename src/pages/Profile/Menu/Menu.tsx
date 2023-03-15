@@ -17,9 +17,8 @@ const Menu = () => {
       <div className="profile">
         <div className="left-profile">
 
-          <div className="text">
-            <hr />
-            <h2>Меню</h2>
+          <div className="food">
+            <NavLink className="food-button greenBack" to={`/food/${data?._id}`}>Добавить карточку еды</NavLink>
           </div>
 
         </div>
@@ -32,7 +31,7 @@ const Menu = () => {
           <div className="booking-links">
             <NavLink className="button" to={`/profile/${data?._id}`}>Заказы</NavLink>
             <NavLink className="button" to={`/menu/${data?._id}`}>Меню</NavLink>
-            <NavLink className="button" to={`/information/${data?._id}`}>Информация о ресторане</NavLink>
+            <NavLink className="button" to={`/cafe/${data?._id}`}>Информация о ресторане</NavLink>
           </div>
         </div>
       </div>
