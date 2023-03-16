@@ -19,7 +19,6 @@ export const userSlice = createSlice({
   initialState,
   reducers: {
     forcedLogOut: (state) => {
-      console.log(1)
       state.isAuth = false;
       state.currentUser.id = ''
       state.currentUser.role = ''
