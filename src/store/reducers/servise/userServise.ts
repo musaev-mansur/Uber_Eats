@@ -12,5 +12,14 @@ export const userApi = createApi({
         headers: { Authorization: `Bearer ${cookies.get("token")}` },
       }),
     }),
+    
+    editUserProfile: builder.query({
+      query: (formData) => ({
+        url: `/cafe/edit`,
+        method: 'PATCH',
+        headers: { Authorization: `Bearer ${cookies.get("token")}` },
+        body: formData
+      }),
+    }),
   }),
 });
