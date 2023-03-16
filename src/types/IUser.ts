@@ -1,3 +1,5 @@
+import { IFood } from "./IFood";
+
 export type userState = {
   currentUser: IUserData;
   isAuth: boolean;
@@ -33,7 +35,7 @@ export interface IProfileUserData
   city: string
   address: string
   mail: string
+  menu?: IFood[]
   password: string
   role: string
-  __v: number
 }

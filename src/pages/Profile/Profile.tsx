@@ -1,35 +1,38 @@
-import React from "react";
-import { useParams } from "react-router-dom";
+import React, { useState } from "react";
 import Navbar from "../../components/Navbar/Navbar";
 import { useAppSelector } from "../../hooks/hooks";
 import { userApi } from "../../store/reducers/servise/userServise";
 import avatar from "../../images/avatar.png"
+
 import "./Profile.scss";
+import Menu from "./Menu/Menu";
+import Orders from "./Orders/Orders";
+import Information from "./Information/Information";
 
 const Profile = () => {
-  const { id } = useParams();
+  const [ content, setContent ] = useState("orders")
   const { role } = useAppSelector((state) => state.user.currentUser);
   const { error, data } = userApi.useGetUserQuery(role);
-  console.log(data);
 
   return (
     <div>
       <Navbar />
       <div className="profile">
-        <div className="left">
-          <div className="text">
-            <hr />
-            <h2>ПИЦЦЫ</h2>
-          </div>
+        
+        {content === "orders" && <Orders />}
+        {content === "menu" && <Menu />}
+        {content === "information" && <Information />}
 
-          
-        </div>
-        <div className="right">
+        <div className="right-profile">
           <div className="userImage">
-            <img src={avatar} alt="" />
+            <img src={avatar} alt="avatar" />
           </div>
           <p>{data?.name}</p>
-          <p>{data?.mail}</p>
+          <div className="booking-links">
+            <p onClick={() => setContent("orders")} className={`button ${content === "orders" && `greenBack`}`}>Заказы</p>
+            <p onClick={() => setContent("menu")} className={`button ${content === "menu" && `greenBack`}`}>Меню</p>
+            <p onClick={() => setContent("information")} className={`button ${content === "information" && `greenBack`}`}>Информация о ресторане</p>
+          </div>
         </div>
       </div>
         

@@ -8,7 +8,7 @@ export const userApi = createApi({
   endpoints: (builder) => ({
     getUser: builder.query<IProfileUserData, string>({
       query: (role) => ({
-        url: `/${role}/profile/user`,
+        url: `${role}/profile/user`,
         headers: { Authorization: `Bearer ${cookies.get("token")}` },
       }),
     }),
