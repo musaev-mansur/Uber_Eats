@@ -1,57 +1,27 @@
-import React from "react";
-import { NavLink, useParams } from "react-router-dom";
+import React, { useState } from "react";
 import Navbar from "../../components/Navbar/Navbar";
 import { useAppSelector } from "../../hooks/hooks";
 import { userApi } from "../../store/reducers/servise/userServise";
 import avatar from "../../images/avatar.png"
-import closed from "../../images/closed.png"
+
 import "./Profile.scss";
 import Menu from "./Menu/Menu";
+import Orders from "./Orders/Orders";
+import Information from "./Information/Information";
 
 const Profile = () => {
-  const { id } = useParams();
+  const [ content, setContent ] = useState("orders")
   const { role } = useAppSelector((state) => state.user.currentUser);
   const { error, data } = userApi.useGetUserQuery(role);
-  console.log(data);
 
   return (
     <div>
       <Navbar />
       <div className="profile">
-        <div className="left-profile">
-
-          <div className="text">
-            <hr />
-            <h2>Список заказов</h2>
-          </div>
-
-          <div className="bookings">
-            <div className="order">
-              <p>Заказ № </p>
-              <span>65e60364</span>
-            </div>
-            <p className="time">Получен в 12:35 (2 часа назад)</p>
-            <p className="status">Статус: <span>принят курьером</span></p>
-            <p className="price-order">777 ₽</p>
-            <div className="circle greenBack">
-              <img src={closed} alt="" />
-            </div>
-          </div>
-
-          <div className="bookings">
-            <div className="order">
-              <p>Заказ № </p>
-              <span>65e60364</span>
-            </div>
-            <p className="time">Получен в 12:35 (2 часа назад)</p>
-            <p className="status">Статус: <span>принят курьером</span></p>
-            <p className="price-order">777 ₽</p>
-            <div className="circle greenBack">
-              <img src={closed} alt="" />
-            </div>
-          </div>
-
-        </div>
+        
+        {content === "orders" && <Orders />}
+        {content === "menu" && <Menu />}
+        {content === "information" && <Information />}
 
         <div className="right-profile">
           <div className="userImage">
@@ -59,9 +29,9 @@ const Profile = () => {
           </div>
           <p>{data?.name}</p>
           <div className="booking-links">
-            <NavLink className="button" to={`/profile/${data?._id}`}>Заказы</NavLink>
-            <NavLink className="button" to={`/menu/${data?._id}`}>Меню</NavLink>
-            <NavLink className="button" to={`/information/${data?._id}`}>Информация о ресторане</NavLink>
+            <p onClick={() => setContent("orders")} className={`button ${content === "orders" && `greenBack`}`}>Заказы</p>
+            <p onClick={() => setContent("menu")} className={`button ${content === "menu" && `greenBack`}`}>Меню</p>
+            <p onClick={() => setContent("information")} className={`button ${content === "information" && `greenBack`}`}>Информация о ресторане</p>
           </div>
         </div>
       </div>

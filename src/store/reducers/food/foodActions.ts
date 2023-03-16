@@ -8,10 +8,10 @@ export const getFood = createAsyncThunk("food/upload", async function () {
 });
 
 export const updateFood = createAsyncThunk(
-  "food/update",
-  async ({ _id, food }: { _id: string, food: IFood }, thunkAPI) => {
+  "cafe/update",
+  async ({ _id, food }: { _id: string;  food: IFood }, thunkAPI) => {
     try {
-      const res = await baseService.patch(`/cafe/${_id}`, food, { 
+      const res = await baseService.patch(`/cafe/edit/`, food, { 
         headers: { 'Authorization': `Bearer ${cookies.get('token')}` } 
       });
       return res.data;

@@ -8,9 +8,10 @@ import { updateFood } from "../../../store/reducers/food/foodActions";
 import { IFood } from "../../../types/IFood";
 
 const Information = () => {
-  const { _id } = useParams();
+  // const { _id } = useParams<{ _id: string }>();
   const { role } = useAppSelector((state) => state.user.currentUser);
   const { error, data } = userApi.useGetUserQuery(role);
+  
   console.log(data?._id);
 
   const [name, setName] = useState("");
@@ -62,14 +63,14 @@ const Information = () => {
 
     try {
       const updatedFood: IFood = {
-        _id: _id || "",
+        _id: data?._id || "",
         name: String(formData.get("name") || ""),
-        phone: Number(formData.get("phone") || 0),
+        image: String(formData.get("image") as File || null),
         mail: String(formData.get("mail") || ""),
+        phone: String(formData.get("phone") || ""),
+        city: String(formData.get("city") || ""),
         address: String(formData.get("address") || ""),
-        menu: String(formData.get("menu") || ""),
-        image: data?.image || "",
-        city: data?.city || "",
+        menu: [],
       };
       const response = await dispatch(updateFood({ _id, food: updatedFood }));
       console.log(response);
@@ -79,15 +80,10 @@ const Information = () => {
     }
   };
 
-  console.log(handleSubmit);
-  
   return (
-    <div>
-      <Navbar />
-      <div className="profile">
         <div className="left-profile">
 
-          <form action="">
+          <form  action="">
             <label className="first-label" htmlFor="name">
               1.Название организации
             </label>
@@ -133,26 +129,11 @@ const Information = () => {
               value={menu}
               onChange={handleMenuChange}
             />
-          {/* <button onClick={(event) => handleSubmit(_id, event)} className="save greenBack" type="submit">Сохранить изменения</button> */}
+          <button onClick={(event) => data?._id && handleSubmit(data?._id, event)} className="save greenBack" type="submit">Сохранить изменения</button>
           </form>
 
 
         </div>
-
-        <div className="right-profile">
-          <div className="userImage">
-            <img src={data?.image} alt="avatar" />
-          </div>
-          <p>{data?.name}</p>
-          <div className="booking-links">
-            <NavLink className="button" to={`/profile/${data?._id}`}>Заказы</NavLink>
-            <NavLink className="button" to={`/menu/${data?._id}`}>Меню</NavLink>
-            <NavLink className="button" to={`/cafe/${data?._id}`}>Информация о ресторане</NavLink>
-          </div>
-        </div>
-      </div>
-        
-    </div>
   );
 };
 
