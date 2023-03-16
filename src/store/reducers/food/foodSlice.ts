@@ -1,6 +1,4 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { cookies } from "../../../Api/api";
-import { updateFood } from "./foodActions";
 
 const initialState = {
  
