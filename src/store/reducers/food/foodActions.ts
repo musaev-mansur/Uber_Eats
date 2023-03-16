@@ -1,6 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { baseService, cookies } from "../../../Api/api";
-import { IFood } from "../../../types/IFood";
+import {  IUserEdit } from "../../../types/IUser";
 
 export const getFood = createAsyncThunk("food/upload", async function () {
   const res = await baseService.get(`/posts`);
@@ -9,7 +9,7 @@ export const getFood = createAsyncThunk("food/upload", async function () {
 
 export const updateFood = createAsyncThunk(
   "cafe/update",
-  async ({ _id, food }: { _id: string;  food: IFood }, thunkAPI) => {
+  async ({ _id, food }: { _id: string;  food: IUserEdit }, thunkAPI) => {
     try {
       const res = await baseService.patch(`/cafe/edit/`, food, { 
         headers: { 'Authorization': `Bearer ${cookies.get('token')}` } 

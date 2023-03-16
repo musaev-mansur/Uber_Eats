@@ -39,3 +39,14 @@ export interface IProfileUserData
   password: string
   role: string
 }
+
+export interface IUserEdit {
+  _id: string;
+  name: string,
+  image: string,
+  mail: string, 
+  phone: string,
+  city: string,
+  address: string,
+  menu: [],
+}
