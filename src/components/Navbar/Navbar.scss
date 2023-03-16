@@ -87,6 +87,8 @@
         }
     }
     .basket {
+        display: flex;
+        flex-direction: row;
         margin-top: 23px;
         margin-left: 18px;
         position: relative;
