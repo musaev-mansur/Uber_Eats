@@ -37,6 +37,24 @@ const Basket = () => {
                 <hr />
                 <h2>Оформление заказа</h2>
             </div>
+
+            <div className='form-basket'>
+                <div className='contact-form'>
+                    <form >
+                        <label>
+                        1. Контактная информация
+                        <input placeholder='Имя*'/>
+                        <input placeholder='Телефон*'/>
+                        </label>
+                        <button type="submit"></button>
+                    </form>
+                </div>
+
+                <div className='delivery-form'>
+
+                </div>
+            
+            </div>
         </div>
 
         <Footer />

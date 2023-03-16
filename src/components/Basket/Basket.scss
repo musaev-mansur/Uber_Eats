@@ -31,4 +31,16 @@
             text-transform: uppercase;
         }
     }
+    .form-basket {
+        display: flex;
+        flex-direction: column;
+        .contact-form {
+            display: flex;
+            flex-wrap: wrap;
+            width: 800px;
+            height: 200px;
+            background: linear-gradient(90deg, #494544 0%, #504B4A 100%);
+            border-radius: 10px;
+        }
+    }
 }
