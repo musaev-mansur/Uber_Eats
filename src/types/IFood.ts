@@ -7,11 +7,10 @@ export type foodState = {
 export interface IFood {
   _id: string;
   name: string,
-  image: string | File,
+  image: string,
   mail: string, 
   phone: string,
   city: string,
   address: string,
-  menu: string,
+  menu: [],
 }
-

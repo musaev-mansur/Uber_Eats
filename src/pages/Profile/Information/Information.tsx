@@ -65,12 +65,12 @@ const Information = () => {
       const updatedFood: IFood = {
         _id: data?._id || "",
         name: String(formData.get("name") || ""),
-        image: String(formData.get("image") || ""),
+        image: String(formData.get("image") as File || null),
         mail: String(formData.get("mail") || ""),
         phone: String(formData.get("phone") || ""),
         city: String(formData.get("city") || ""),
         address: String(formData.get("address") || ""),
-        menu: String(formData.get("menu") || ""),
+        menu: [],
       };
       const response = await dispatch(updateFood({ _id, food: updatedFood }));
       console.log(response);
@@ -81,9 +81,6 @@ const Information = () => {
   };
 
   return (
-    <div>
-      <Navbar />
-      <div className="profile">
         <div className="left-profile">
 
           <form  action="">
@@ -137,21 +134,6 @@ const Information = () => {
 
 
         </div>
-
-        <div className="right-profile">
-          <div className="userImage">
-            <img src={data?.image} alt="avatar" />
-          </div>
-          <p>{data?.name}</p>
-          <div className="booking-links">
-            <NavLink className="button" to={`/profile/${data?._id}`}>Заказы</NavLink>
-            <NavLink className="button" to={`/menu/${data?._id}`}>Меню</NavLink>
-            <NavLink className="button" to={`/cafe/${data?._id}`}>Информация о ресторане</NavLink>
-          </div>
-        </div>
-      </div>
-        
-    </div>
   );
 };
 

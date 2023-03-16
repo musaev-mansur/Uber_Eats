@@ -12,7 +12,7 @@ const initialState: foodState = {
     phone: "",
     city: "",
     address: "",
-    menu: "",
+    menu: [],
   }],
   isAuth: false,
   isLoading: false,

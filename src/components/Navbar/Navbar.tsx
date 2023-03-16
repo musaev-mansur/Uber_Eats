@@ -16,7 +16,6 @@ const Navbar = () => {
 
   const handleClick = () => {
     dispatch(forcedLogOut())
-    console.log(2)
   };
 
   return (
