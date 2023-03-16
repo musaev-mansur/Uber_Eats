@@ -106,9 +106,11 @@
               left: 50%;
               transform: translate(-50%, -50%);
               z-index: -1;
+              background-color: gray;
             }
           
             &::before {
+              background-color: gray;
               content: "";
               position: absolute;
               width: 125px;
@@ -143,9 +145,6 @@
             font-size: 28px;
             line-height: 38px;
             letter-spacing: 0.03em;
-        }
-        .active {
-            background: linear-gradient(114.93deg, #618967 5.11%, #72A479 94%);
         }
     }
 }
