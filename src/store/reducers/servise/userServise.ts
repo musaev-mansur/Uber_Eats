@@ -7,6 +7,8 @@ export const userApi = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: baseURL }),
   tagTypes: ['UserData'],
   endpoints: (builder) => ({
+     /*---------------------------------------------------------------------------------------------------- */
+    //Получения данных о пользователе
     getUser: builder.query<IProfileUserData, string>({
       query: (role) => ({
         url: `${role}/profile/user`,
@@ -14,7 +16,9 @@ export const userApi = createApi({
       }),
       providesTags: result => ['UserData']
     }),
-    
+    /*---------------------------------------------------------------------------------------------------- */
+
+    //Изменения профиля
     editUserProfile: builder.mutation({
       query: (formData) => ({
         url: `/cafe/edit`,

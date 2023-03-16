@@ -11,12 +11,14 @@
     height: 99px;
     justify-content: center;
     gap: 360px;
+    padding: 0 37px;
+
     .logo {
         width: 100px;
         height: 25px;
-        margin-top: 38px;
-        margin-right: 72px; 
+        margin: 38px 72px 0 0 ;
     }
+
     input {
         margin-top: 23px;
         width: 191px;
@@ -25,22 +27,23 @@
         box-shadow: -2px 4px 4px rgba(0, 0, 0, 0.2), inset 0px 4px 4px rgba(0, 0, 0, 0.25);
         border-radius: 10px;
     }
+
     .circle {
         margin-top: 33px;
         width: 32px;
         height: 32px;
         border-radius: 16px;
         text-align: center;
+
         img {
             width: 13.74px;
             margin-top: 10px;
             height: 13.49px;
         }
     }
+
     .contact {
-        margin-top: 30px;
-        margin-left: 10px;
-        margin-right: 45px;
+        margin: 30px 45px 0 10px;
         color: #CFCFCF;
         width: 136px;
         height: 39px;
@@ -52,8 +55,10 @@
             font-weight: 700;
         }
     }
+
     .profile {
         display: flex;
+
         > button {
             cursor: pointer;
             color: #cf4646;
@@ -63,11 +68,13 @@
             border: none;
             background: none;
         }
+
         > img {
             margin-top: 40px;
             width: 15.15px;
             height: 13.21px;
         }
+
         > hr {
             border: none;
             margin-top: 47px;
@@ -76,16 +83,19 @@
             background: #635C5A;
             transform: rotate(90deg);
         }
+
         > p {
             margin-top: 40px;
             text-decoration: none;
             display: inline-block;
             height: 40px;
         }
+
         .turn-off {
             margin-top: 40px;
         }
     }
+
     .basket {
         display: flex;
         flex-direction: row;
@@ -104,6 +114,7 @@
             line-height: 17px;
             text-align: center;
         }
+
         hr {
             margin-top: 25px;
             border: 1px solid rgba(255, 255, 255, 0.3);
@@ -111,6 +122,7 @@
             height: 0px;
             transform: rotate(90deg);
         }
+
         p {
             display: grid;
             place-items: center;
@@ -123,6 +135,7 @@
             height: 24px;
             background: #FFFFFF;
             border-radius: 15px;
+
             .number {
                 font-weight: 600;
                 font-size: 12px;
@@ -131,6 +144,7 @@
             }
         }
     }
+
     .personal {
         margin-top: 23px;
         margin-left: 18px;

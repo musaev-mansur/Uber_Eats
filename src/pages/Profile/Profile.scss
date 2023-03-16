@@ -1,10 +1,13 @@
 .profile {
   display: flex;
+
   .left-profile {
     display: flex;
     flex-direction: column;
+
     .text {
       margin: 45px 0px 45px 85px;
+
       hr {
         border: none;
         margin-top: 20px;
@@ -13,6 +16,7 @@
         background: #618967;
         transform: rotate(90deg);
       }
+
       h2 {
         height: 44px;
         font-weight: 700;
@@ -21,12 +25,14 @@
         letter-spacing: 0.03em;
       }
     }
+
     .bookings {
       margin-bottom: 16px;
       display: flex;
       width: 892px;
       height: 130px;
       background: #504b4a;
+
       .order {
         margin: 28px 0 0 24px;
         display: flex;
@@ -39,6 +45,7 @@
           letter-spacing: 0.03em;
         }
       }
+      
       .time {
         margin: 55px 0px 0px 45px;
         font-weight: 600;
@@ -46,6 +53,7 @@
         line-height: 22px;
         letter-spacing: 0.03em;
       }
+
       .status {
         margin: 60px 0px 0px 40px;
         font-weight: 600;
@@ -56,6 +64,7 @@
           color: #618967;
         }
       }
+
       .price-order {
         margin: 50px 0px 0px 50px;
         font-weight: 600;
@@ -63,6 +72,7 @@
         line-height: 35px;
         letter-spacing: 0.03em;
       }
+
       .circle {
         margin: 50px 0px 0px 40px;
         cursor: pointer;
@@ -78,11 +88,13 @@
       }
     }
   }
+
   .right-profile {
     margin-top: 30px;
     margin-left: 43px;
     display: flex;
     flex-direction: column;
+
     .userImage {
       place-self: center;
       position: relative;
@@ -90,6 +102,7 @@
       width: 242px;
       border-radius: 10px;
       overflow: hidden;
+
       > img {
         object-fit: contain;
         width: 242px;
@@ -117,11 +130,12 @@
         border-radius: 50%;
         border: solid 6px black;
         left: 50%;
-        top: 115%;
+        top: 116%;
         transform: translate(-50%, -50%);
         z-index: -1;
       }
     }
+
     > p {
       padding: 15px;
       text-align: center;
@@ -130,9 +144,11 @@
       line-height: 44px;
     }
   }
+
   .booking-links {
     display: flex;
     flex-direction: column;
+
     .button {
       cursor: pointer;
       text-decoration: none;
