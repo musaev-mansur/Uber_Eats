@@ -61,7 +61,6 @@ const Navbar = () => {
               </p>
             </button>
           </Link> 
-
           {isAuth && (
             <button className="personal greenBack">
               <span>
