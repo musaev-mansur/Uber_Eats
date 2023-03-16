@@ -22,7 +22,7 @@ const Profile = () => {
         {content === "information" && <Information />}
 
         <div className="right-profile">
-          <div className="userImage userImage">
+          <div className="userImage">
             {data?.image && <img src={data?.image} alt="avatar" />}
           </div>
           <p>{data?.name}</p>

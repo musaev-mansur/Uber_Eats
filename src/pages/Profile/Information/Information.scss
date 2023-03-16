@@ -1,14 +1,19 @@
 .profile {
+
   .left-profile {
+
     form {
-      margin-top: 40px;
-      display: flex;
-      flex-wrap: wrap;
-      width: 844px;
-      height: 697px;
-      background: linear-gradient(90deg, #494544 0%, #504b4a 100%);
-      border-radius: 20px;
-      padding: 30px 40px 0 32px;
+      .input-elems {
+        width: 844px;
+        height: 697px;
+        background: linear-gradient(90deg, #494544 0%, #504b4a 100%);
+        border-radius: 20px;
+        padding: 30px 40px 0 32px;
+        margin-top: 40px;
+        display: flex;
+        flex-wrap: wrap;
+      }
+
       label {
         font-weight: 600;
         font-size: 22px;
@@ -18,9 +23,11 @@
         display: flex;
         justify-content: space-between;
       }
+
       .first-input {
         margin-top: 30px;
       }
+
       input {
         margin-left: 95px;
         width: 382px;
@@ -28,6 +35,8 @@
         background: #3d3938;
         border: 1px solid #706f6f;
         border-radius: 15px;
+        padding-left: 5px;
+
         &::-webkit-file-upload-button {
           cursor: pointer;
           margin: 15px 7px 0 15px;
@@ -38,6 +47,7 @@
         }
       }
     }
+
     .save {
       margin: auto;
       margin-top: 32px;
@@ -50,6 +60,7 @@
       font-size: 28px;
       line-height: 38px;
       letter-spacing: 0.03em;
+      display: block;
     }
   }
 }
