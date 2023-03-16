@@ -9,7 +9,7 @@ import { userApi } from "../../store/reducers/servise/userServise";
 import { forcedLogOut } from "../../store/reducers/user/userSlice";
 
 const Navbar = () => {
-  
+
   const dispatch = useAppDispatch()
   const { role } = useAppSelector((state) => state.user.currentUser);
   const { isAuth } = useAppSelector((state) => state.user);
@@ -58,7 +58,6 @@ const Navbar = () => {
               </p>
             </button>
           </Link> 
-
           {data?._id && (
             <button className="personal greenBack">
               <span>
