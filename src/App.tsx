@@ -1,5 +1,5 @@
-import { Route, useActionData } from 'react-router';
-import { Routes } from 'react-router-dom';
+import { Route, useActionData } from "react-router";
+import { Routes } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "./hooks/hooks";
 import './App.scss';
 import './generalStyle/GeneralStyle.scss';
@@ -14,14 +14,16 @@ import { useEffect } from 'react';
 import Menu from './pages/Profile/Menu/Menu';
 import Information from './pages/Profile/Information/Information';
 import Basket from './components/Basket/Basket';
+import { cookies } from "./Api/api";
 
 function App() {
-  
   const dispatch = useAppDispatch();
-  const {isLoading } = useAppSelector(state => state.user)
+  const { isLoading } = useAppSelector((state) => state.user);
 
   useEffect(() => {
-    dispatch(logOut());
+    if (cookies.get("data")) {
+      dispatch(logOut());
+    }
   }, []);
 
   return (

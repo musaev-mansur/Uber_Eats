@@ -1,19 +1,20 @@
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
 import { curryGetDefaultMiddleware } from "@reduxjs/toolkit/dist/getDefaultMiddleware";
-import foodSlice from "./reducers/food/foodSlice";
+import { foodApi } from "./reducers/servise/foodService";
 import { userApi } from "./reducers/servise/userServise";
 import userSlice from "./reducers/user/userSlice";
 
 const rootReducer = combineReducers({
   user: userSlice,
-  food: foodSlice,
   userApi: userApi.reducer,
+  foodApi: foodApi.reducer,
 });
 
 export const store = configureStore({
   reducer: rootReducer,
   middleware: (curryGetDefaultMiddleware) =>
-    curryGetDefaultMiddleware().concat(userApi.middleware),
+    curryGetDefaultMiddleware().concat(userApi.middleware, foodApi.middleware),
+    
 });
 
 export type AppDispatch = typeof store.dispatch;

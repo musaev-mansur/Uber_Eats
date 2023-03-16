@@ -9,12 +9,12 @@ import { userApi } from "../../store/reducers/servise/userServise";
 import { forcedLogOut } from "../../store/reducers/user/userSlice";
 
 const Navbar = () => {
+  
   const dispatch = useAppDispatch()
   const { role } = useAppSelector((state) => state.user.currentUser);
   const { isAuth } = useAppSelector((state) => state.user);
   const { data } = userApi.useGetUserQuery(role);
 
-  console.log(data);
   const handleClick = () => {
     dispatch(forcedLogOut())
   };
