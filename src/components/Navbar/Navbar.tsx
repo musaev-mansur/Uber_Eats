@@ -49,13 +49,15 @@ const Navbar = () => {
               </Link>
             )}
           </div>
-          <button className="basket greenBack">
-            <span className="basket-text">Корзина</span>
-            <hr />
-            <p>
-              <span className="number">4</span>
-            </p>
-          </button>
+          <Link className="turn-off" to="/basket">
+            <button className="basket greenBack">
+              <span className="basket-text">Корзина</span>
+              <hr />
+              <p>
+                <span className="number">4</span>
+              </p>
+            </button>
+          </Link> 
 
           {data?._id && (
             <button className="personal greenBack">
