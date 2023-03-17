@@ -7,3 +7,8 @@ export interface IFood {
   price: number;
   cafeId: string;
 }
+
+export interface IFoodCategories {
+  name: string;
+  _id: string;
+}

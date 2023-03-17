@@ -22,29 +22,31 @@
         width: 100%;
         display: flex;
         justify-content: space-between;
+        height: 60px;
+        align-items: center;
+
+        >input, textarea {
+          margin-left: 95px;
+          width: 382px;
+          height: 60px;
+          background: #3d3938;
+          border: 1px solid #706f6f;
+          border-radius: 15px;
+          padding-left: 5px;
+  
+          &::-webkit-file-upload-button {
+            cursor: pointer;
+            margin: 15px 7px 0 15px;
+            width: 133px;
+            height: 30px;
+            background: #d9d9d9;
+            border: 0.6px solid #000000;
+          }
+        }
       }
 
       .first-input {
         margin-top: 30px;
-      }
-
-      input {
-        margin-left: 95px;
-        width: 382px;
-        height: 60px;
-        background: #3d3938;
-        border: 1px solid #706f6f;
-        border-radius: 15px;
-        padding-left: 5px;
-
-        &::-webkit-file-upload-button {
-          cursor: pointer;
-          margin: 15px 7px 0 15px;
-          width: 133px;
-          height: 30px;
-          background: #d9d9d9;
-          border: 0.6px solid #000000;
-        }
       }
     }
 

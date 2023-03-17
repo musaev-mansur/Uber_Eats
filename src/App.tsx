@@ -41,7 +41,7 @@ function App() {
         <Route path="/sign-in" element={<SignIn />} />
         {isAuth && (
           <>
-            <Route path="/profile/:id" element={<Profile />} />
+            <Route path="/profile" element={<Profile />} />
             <Route path="/basket" element={<Basket />} />
           </>
         )}
