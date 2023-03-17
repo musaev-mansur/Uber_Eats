@@ -39,20 +39,37 @@ const Basket = () => {
             </div>
 
             <div className='form-basket'>
-                <div className='contact-form'>
-                    <form >
+
+                <form >
+                    <div className='contact-form'>
                         <label>
-                        1. Контактная информация
-                        <input placeholder='Имя*'/>
+                        <p>1. Контактная информация</p>
+                        <input className='name-label' placeholder='Имя*'/>
                         <input placeholder='Телефон*'/>
                         </label>
-                        <button type="submit"></button>
-                    </form>
-                </div>
+                    </div>
+                    <div className='delivery-form'>
+                        <label>
+                        <p>2. Доставка</p>
+                        <input className='name-label' placeholder='Имя*'/>
+                        <input placeholder='Телефон*'/>
+                        </label>
+                    </div>
+                </form>
+                <h2>Form with Two Buttons</h2>
+                
+                <button id="btn-delivery">Delivery Form</button>
+                <button id="btn-pickup">Pickup Form</button>
 
-                <div className='delivery-form'>
+                <form id="delivery-form" className="form">
+                <input type="text" placeholder="Delivery address" />
+                <input type="text" placeholder="Contact phone" />
+                </form>
 
-                </div>
+                <form id="pickup-form" className="form2">
+                <input type="text" placeholder="Pickup location" />
+                <input type="text" placeholder="Contact phone" />
+                </form>
             
             </div>
         </div>
