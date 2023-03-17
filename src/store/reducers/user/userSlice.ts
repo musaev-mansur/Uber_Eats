@@ -24,6 +24,7 @@ export const userSlice = createSlice({
       state.currentUser.role = ''
       cookies.remove('token');
       cookies.remove('data');
+      window.location.href = '/'
     }
   },
   extraReducers: (builder) => {

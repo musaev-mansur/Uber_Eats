@@ -65,7 +65,7 @@ const Navbar = () => {
             <button className="personal greenBack">
               <span>
                 {data?._id ? (
-                  <Link className="turn-off" to={`/profile/${data?._id}`}>
+                  <Link className="turn-off" to={`/profile`}>
                     Личный кабинет
                   </Link>
                 ) : (
