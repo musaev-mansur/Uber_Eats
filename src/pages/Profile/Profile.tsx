@@ -4,9 +4,9 @@ import { useAppSelector } from "../../hooks/hooks";
 import { userApi } from "../../store/reducers/servise/userServise";
 import avatar from "../../images/avatar.png";
 import "./Profile.scss";
-import Menu from "./Menu/Menu";
-import Orders from "./Orders/Orders";
-import Information from "./Information/Information";
+import Information from "../../components/Information/Information";
+import Menu from "../../components/Menu/Menu";
+import Orders from "../../components/Orders/Orders";
 
 const Profile = () => {
   const [content, setContent] = useState("orders");

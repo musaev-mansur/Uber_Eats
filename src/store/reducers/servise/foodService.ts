@@ -1,12 +1,12 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/dist/query/react";
 import { baseURL, cookies } from "../../../Api/api";
-import { IFoodCategories } from "../../../types/IFood";
+import { IFood, IFoodCategories } from "../../../types/IFood";
 import { IProfileUserData } from "../../../types/IUser";
 
 export const foodApi = createApi({
   reducerPath: "foodApi",
   baseQuery: fetchBaseQuery({ baseUrl: baseURL }),
-  tagTypes: ['FoodData'],
+  tagTypes: ["FoodData"],
   endpoints: (builder) => ({
     /* -------------------------------------------------------------------------------------------------- */
 
@@ -16,13 +16,27 @@ export const foodApi = createApi({
         url: `/categories`,
       }),
     }),
-     /* -------------------------------------------------------------------------------------------------- */
+    /* -------------------------------------------------------------------------------------------------- */
 
     // получение блюд
-    getFood: builder.query<IFoodCategories[], string>({
+    getMyFood: builder.query<IFood[], string>({
       query: () => ({
-        url: `/categories`,
+        url: `/food/cafe`,
+        headers: { Authorization: `Bearer ${cookies.get("token")}` },
       }),
+      providesTags: (result) => ["FoodData"],
+    }),
+    /* -------------------------------------------------------------------------------------------------- */
+
+    // добавление нового блюда
+    addNewFood: builder.mutation({
+      query: (formData) => ({
+        url: `/food`,
+        method: "POST",
+        headers: { Authorization: `Bearer ${cookies.get("token")}` },
+        body: formData,
+      }),
+      invalidatesTags: ["FoodData"],
     }),
   }),
 });

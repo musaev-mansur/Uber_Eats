@@ -62,6 +62,7 @@ export const userSlice = createSlice({
       cookies.remove('token')
       cookies.remove('data')
       state.isLoading = false
+      state.isAuth = false
     });
     /* -------------------------------------------------------------------------------------------------------- */
 

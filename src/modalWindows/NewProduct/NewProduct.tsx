@@ -3,9 +3,11 @@ import { useForm } from "react-hook-form";
 import { foodApi } from "../../store/reducers/servise/foodService";
 import { IFood } from "../../types/IFood";
 import "./NewProduct.scss";
+import closed from "../../images/closed.png";
 
 const NewProduct = () => {
   const { data: foodCategories } = foodApi.useGetCategoriesQuery("");
+  const [addNewFood] = foodApi.useAddNewFoodMutation();
   const {
     register,
     formState: { errors, isValid },
@@ -26,15 +28,25 @@ const NewProduct = () => {
         formData.append(key, value.toString());
       }
     });
+    await addNewFood(formData);
+    reset();
+    window.location.href = "#";
+  };
 
-    // // await editUserProfile(formData);
-    // reset();
+  const handleClick = () => {
+    reset();
+    window.location.href = "#";
   };
 
   return (
     <div id="NewProduct" className="NewProduct">
       <form onSubmit={handleSubmit(onSubmit)}>
-        <div className="NewProduct__header">Добавление блюда</div>
+        <div className="NewProduct__header">
+          Добавление блюда
+          <div onClick={handleClick} className="NewProduct__closed greenBack">
+            <img src={closed} alt="" />
+          </div>
+        </div>
         <label>
           1.Название блюда
           <input {...register("name", { required: true })} />
@@ -59,7 +71,11 @@ const NewProduct = () => {
             ))}
           </select>
         </label>
-        <button type="submit" className="save greenBack">
+        <button
+          type="submit"
+          disabled={!isValid}
+          className="NewProduct__button save greenBack"
+        >
           Добавить блюдо
         </button>
       </form>

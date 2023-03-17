@@ -63,6 +63,10 @@
       line-height: 38px;
       letter-spacing: 0.03em;
       display: block;
+
+      &:disabled {
+        cursor: default;
+      }
     }
   }
 }

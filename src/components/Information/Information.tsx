@@ -1,8 +1,8 @@
 import React from "react";
-import { useAppSelector } from "../../../hooks/hooks";
-import { userApi } from "../../../store/reducers/servise/userServise";
+import { useAppSelector } from "../../hooks/hooks";
+import { userApi } from "../../store/reducers/servise/userServise";
 import "./Information.scss";
-import { IUserEdit } from "../../../types/IUser";
+import { IUserEdit } from "../../types/IUser";
 import { useForm } from "react-hook-form";
 
 const Information = () => {
