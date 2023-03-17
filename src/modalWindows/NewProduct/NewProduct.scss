@@ -4,12 +4,16 @@
   z-index: 2;
   height: 697px;
   width: 844px;
+  left: 298px;
+  top: 145px;
 
   &:target {
     display: block;
   }
 
   &__header {
+    display: grid;
+    place-items: center;
     position: relative;
     height: 80px;
     width: 100%;
@@ -22,6 +26,17 @@
     text-align: center;
   }
 
+  &__closed {
+    position: absolute;
+    top: 0px;
+    right: -40px;
+    width: 30px;
+    height: 30px;
+    display: grid;
+    place-items: center;
+    border-radius: 20px;
+  }
+
   form {
     width: 100%;
     height: 100%;
@@ -29,7 +44,7 @@
     top: 145px;
     border-radius: 20px;
     background: linear-gradient(90deg, #494544 0%, #504b4a 100%);
-    padding: 24px 40px;
+    padding: 0px 40px;
     display: grid;
     gap: 10px;
 
@@ -44,6 +59,10 @@
       border: 1px solid #706f6f;
       border-radius: 15px;
       padding-left: 5px;
+
+      &:invalid {
+        border-color: red;
+      }
 
       &::-webkit-file-upload-button {
         cursor: pointer;
@@ -60,6 +79,22 @@
       line-height: 30px;
       letter-spacing: 0.03em;
       padding: 10px;
+    }
+    label {
+      position: relative;
+
+      .error {
+        position: absolute;
+        top: 50%;
+        right: 50%;
+        transform: translate(-4%, -50%);
+        font-family: "Times New Roman", Times, serif;
+        font-size: 15px;
+        font-weight: 600;
+        line-height: 30px;
+        letter-spacing: 0.09em;
+        color: red;
+      }
     }
   }
   #textarea {

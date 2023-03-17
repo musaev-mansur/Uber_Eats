@@ -1,8 +1,10 @@
 .profile {
     justify-content: space-between;
+
     .left-profile {
         .food{
             margin: 54px 0 0 110px;
+
             .food-button {
                 text-decoration: none;
                 cursor: pointer;
@@ -12,6 +14,7 @@
                 line-height: 38px;
                 letter-spacing: 0.03em;
                 border-radius: 10px;
+                display: block;
             }
         }
     }

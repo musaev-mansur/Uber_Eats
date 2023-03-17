@@ -11,8 +11,7 @@ import SignUpClient from "./pages/SignUpClient/SignUpClient";
 import Profile from "./pages/Profile/Profile";
 import { logOut } from "./store/reducers/user/userActions";
 import { useEffect } from "react";
-import Menu from "./pages/Profile/Menu/Menu";
-import Information from "./pages/Profile/Information/Information";
+import Information from "./components/Information/Information";
 import Basket from "./components/Basket/Basket";
 import { cookies } from "./Api/api";
 

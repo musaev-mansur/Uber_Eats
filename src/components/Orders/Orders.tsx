@@ -1,5 +1,5 @@
 import React from "react";
-import closed from "../../../images/closed.png"
+import closed from "../../images/closed.png"
 
 const Orders = () => {
   return (

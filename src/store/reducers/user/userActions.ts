@@ -25,7 +25,6 @@ export const logOut = createAsyncThunk("get/user", async function () {
 export const signUpClient = createAsyncThunk<string, ISignUp>(
   'signUp/client', async function (clientsData) {
     const res = await baseService.post(`/client/signup`, clientsData);
-    console.log(res)
     return res.data
   }
 )
@@ -33,7 +32,6 @@ export const signUpClient = createAsyncThunk<string, ISignUp>(
 export const signUpCafe = createAsyncThunk<string, ISignUp>(
   'signUp/cafe', async function (cafeData) {
     const res = await baseService.post(`/cafe/signup`, cafeData);
-    console.log(res)
     return res.data
   }
 )
