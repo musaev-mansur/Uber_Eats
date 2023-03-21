@@ -3,8 +3,10 @@
   display: flex;
   flex-direction: column;
   .back-home {
+    margin: 49px 0 37px 0;
     display: flex;
     & img {
+      margin: 5px 15px 0 0;
       cursor: pointer;
     }
     & p {
@@ -15,6 +17,7 @@
   }
   .basket-title {
     display: flex;
+    margin-bottom: 54px;
     & hr {
       border: none;
       margin-top: 20px;
@@ -51,6 +54,7 @@
             line-height: 22px;
             }
             input {
+            padding: 1rem;
             font-size: 16px;
             line-height: 19px;
             width: 363px;
@@ -64,10 +68,160 @@
             }
         }
         .delivery-form {
+            padding-left: 30px;
             width: 800px;
             height: 456px;
             background: linear-gradient(90deg, #494544 0%, #504b4a 100%);
             border-radius: 10px;
+            > p {
+              padding: 30px 0 30px 0;
+              font-weight: 700;
+              font-size: 18px;
+              line-height: 22px;
+            }
+            .buttons {
+              display: flex;
+              width: 363px;
+              height: 70px;
+              .button {
+                cursor: pointer;
+                text-decoration: none;
+                text-align: center;
+                margin-bottom: 10px;
+                padding: 20px 52px;
+                border: 1px solid #72A479;
+                font-weight: 700;
+                font-size: 16px;
+                line-height: 19px;
+              }
+              & .deliveries{
+                border-radius: 10px 0 0 10px;
+              }
+              & .contact {
+                border-radius: 0 10px 10px 0;
+              }
+            }
+            .label-delivery {
+              > p{
+                margin: 10px 0 20px 0;
+              }
+              input {
+                padding: 1rem;
+                font-size: 16px;
+                line-height: 19px;
+                background: #3d3938;
+                border: 1px solid #706f6f;
+                border-radius: 10px;
+              }
+              &::placeholder {
+                color: white;
+              }
+              & .street {
+                padding: 21px 268px 20px 30px;
+                margin: 0 15px 15px 0;
+              }
+              & .house {
+                padding: 20px;
+              }
+              & .office, .entrance, .floor {
+                padding: 20px;
+                margin-bottom: 15px;
+              }
+              & .entrance{
+                margin: 0 18px 0 18px;
+              }
+              & .comment {
+                padding: 21px 520px 20px 30px;
+              }
+            }
+            .restaurant-label {
+              > p {
+                margin: 20px 0 20px 0;
+                font-weight: 700;
+                font-size: 16px;
+                line-height: 19px;
+              }
+              & option, select {
+                padding: 1rem;
+                font-size: 16px;
+                line-height: 19px;
+                width: 363px;
+                height: 60px;
+                background: #3d3938;
+                border: 1px solid #706f6f;
+                border-radius: 10px;
+              }
+            }
+        }
+        .pay-form, .time-form {
+            margin: 20px 0 20px 0;
+            padding-left: 30px;
+            width: 800px;
+            height: 181px;
+            background: linear-gradient(90deg, #494544 0%, #504b4a 100%);
+            border-radius: 10px;
+            > p {
+              padding: 30px 0 30px 0;
+              font-weight: 700;
+              font-size: 18px;
+              line-height: 22px;
+            }
+            .buttons {
+              display: flex;
+              width: 551px;
+              height: 70px;
+              .button {
+                cursor: pointer;
+                text-decoration: none;
+                text-align: center;
+                margin-bottom: 10px;
+                padding: 20px 32px;
+                border: 1px solid #72A479;
+                font-weight: 700;
+                font-size: 16px;
+                line-height: 19px;
+              }
+              & .credit-card, .deliveries{
+                border-radius: 10px 0 0 10px;
+              }
+              & .cash, .contact {
+                border-radius: 0 10px 10px 0;
+              }
+            }
+        }
+        .agree-form {
+          margin-bottom: 90px;
+          padding: 1em;
+          width: 800px;
+          height: 85px;
+          background: linear-gradient(90deg, #494544 0%, #504B4A 100%);
+          border-radius: 10px;
+          > input {
+            position: relative;
+            top: 5px;
+            width: 22px;
+            height: 22px;
+            background: #FFFFFF;
+            border: 1px solid #E7EEF1;
+            border-radius: 3px;
+          }
+          & label {
+            margin: 0 75px 0 15px;
+            font-weight: 500;
+            font-size: 13px;
+            line-height: 15px;
+            > span {
+              color: #72A479;
+            }
+          }
+          & button {
+            border: none;
+            padding: 17px 50px;
+            border-radius: 10px;
+          }
+          & .greyColor {
+            background: grey;
+          }
         }
     }
   }
