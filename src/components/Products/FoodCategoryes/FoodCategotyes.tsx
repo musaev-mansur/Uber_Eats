@@ -1,5 +1,5 @@
 import React from "react";
-import { IFood } from "../../types/IFood";
+import { IFood } from "../../../types/IFood";
 import FoodCard from "./FoodCard";
 
 interface IFoodCategoryes {
