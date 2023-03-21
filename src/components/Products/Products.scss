@@ -28,6 +28,7 @@
     }
   }
   .card {
+    position: relative;
     margin-top: 40px;
     margin-left: 37px;
     background: linear-gradient(90deg, #494544 0%, #504b4a 100%);
@@ -40,16 +41,32 @@
       height: 227px;
       border-radius: 10px 10px 0 0;
     }
+    .count {
+      position: absolute;
+      display: grid;
+      place-items: center;
+      top: -10px;
+      right: -10px;
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 24px;
+    }
+
     .card-info {
       padding: 14px 16px 18px 20px;
       .nav,
       .footer {
         justify-content: space-between;
+
         .name {
           font-weight: 700;
           font-size: 22px;
           line-height: 27px;
         }
+
         .weight {
           margin-top: 10px;
           font-size: 12px;
@@ -57,24 +74,42 @@
           color: #cfcfcf;
         }
       }
+
       .description {
         margin-top: 5px;
         font-size: 13px;
         line-height: 17px;
         color: #cfcfcf;
       }
-      .price {
-        margin-top: 25px;
+
+      .price,
+      .CounChangeButtons {
+        display: flex;
         font-weight: 600;
         font-size: 20px;
         line-height: 24px;
+        align-items: center;
       }
+
+      .CounChangeButtons {
+        justify-content: space-between;
+        width: 100%;
+      }
+
+      .countButton {
+        height: 44px;
+        width: 62px;
+        display: grid;
+        place-items: center;
+        font-size: 35px;
+      }
+
       button {
-        margin-top: 13px;
         width: 137px;
         height: 44px;
         border-radius: 10px;
         border: none;
+
         img {
           margin-left: 15px;
           width: 18.5px;
@@ -83,6 +118,7 @@
       }
     }
   }
+
   .more {
     margin: auto;
     margin-top: 40px;
@@ -100,8 +136,5 @@
 .products-hr {
   margin: 48px 0 42px;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  position: relative;
-  left: -50%;
-  right: -50%;
-  width: 200%;
+  width: 100%;
 }

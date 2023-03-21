@@ -1,7 +1,7 @@
 import React from "react";
 import { foodApi } from "../../store/reducers/servise/foodService";
 import { IFood } from "../../types/IFood";
-import FoodCategotyes from "../FoodCategoryes/FoodCategotyes";
+import FoodCategotyes from "./FoodCategoryes/FoodCategotyes";
 import "./Products.scss";
 
 const Products = () => {
