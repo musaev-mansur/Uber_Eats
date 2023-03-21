@@ -6,7 +6,7 @@ import { IProfileUserData } from "../../../types/IUser";
 export const foodApi = createApi({
   reducerPath: "foodApi",
   baseQuery: fetchBaseQuery({ baseUrl: baseURL }),
-  tagTypes: ["FoodData"],
+  tagTypes: ["UserFoodData", "AllFoodData"],
   endpoints: (builder) => ({
     /* -------------------------------------------------------------------------------------------------- */
 
@@ -18,13 +18,13 @@ export const foodApi = createApi({
     }),
     /* -------------------------------------------------------------------------------------------------- */
 
-    // получение блюд
+    // получение блюд пользователя
     getMyFood: builder.query<IFood[], string>({
       query: () => ({
         url: `/food/cafe`,
         headers: { Authorization: `Bearer ${cookies.get("token")}` },
       }),
-      providesTags: (result) => ["FoodData"],
+      providesTags: (result) => ["UserFoodData"],
     }),
     /* -------------------------------------------------------------------------------------------------- */
 
@@ -36,7 +36,16 @@ export const foodApi = createApi({
         headers: { Authorization: `Bearer ${cookies.get("token")}` },
         body: formData,
       }),
-      invalidatesTags: ["FoodData"],
+      invalidatesTags: ["UserFoodData"],
+    }),
+    /* -------------------------------------------------------------------------------------------------- */
+
+    // получение всех блюд
+    getAllFood: builder.query<IFood[], string>({
+      query: () => ({
+        url: `/food`,
+      }),
+      providesTags: ["AllFoodData"],
     }),
   }),
 });
