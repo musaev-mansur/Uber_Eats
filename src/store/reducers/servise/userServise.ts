@@ -8,6 +8,7 @@ export const userApi = createApi({
   tagTypes: ['UserData'],
   endpoints: (builder) => ({
      /*---------------------------------------------------------------------------------------------------- */
+     
     //Получения данных о пользователе
     getUser: builder.query<IProfileUserData, string>({
       query: (role) => ({

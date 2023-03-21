@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Navbar from "../../components/Navbar/Navbar";
 import { useAppSelector } from "../../hooks/hooks";
 import { userApi } from "../../store/reducers/servise/userServise";
-import avatar from "../../images/avatar.png";
 import "./Profile.scss";
 import Information from "../../components/Information/Information";
 import Menu from "../../components/Menu/Menu";
