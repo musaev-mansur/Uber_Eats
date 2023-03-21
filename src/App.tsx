@@ -14,10 +14,14 @@ import { useEffect } from "react";
 import Information from "./components/Information/Information";
 import Basket from "./components/Basket/Basket";
 import { cookies } from "./Api/api";
+import { foodApi } from "./store/reducers/servise/foodService";
 
 function App() {
   const dispatch = useAppDispatch();
   const { isLoading, isAuth } = useAppSelector((state) => state.user);
+  const {data} = foodApi.useGetFoodInBasketQuery('')
+  console.log(data);
+  
 
   useEffect(() => {
     if (cookies.get("data")) {

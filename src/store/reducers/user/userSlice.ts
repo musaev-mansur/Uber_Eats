@@ -11,7 +11,7 @@ const initialState: userState = {
   },
   
   isAuth: false,
-  isLoading: false
+  isLoading: false,
 };
 
 export const userSlice = createSlice({
@@ -25,7 +25,7 @@ export const userSlice = createSlice({
       cookies.remove('token');
       cookies.remove('data');
       window.location.href = '/'
-    }
+    }, 
   },
   extraReducers: (builder) => {
     

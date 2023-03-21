@@ -8,7 +8,7 @@ interface IFoodCategoryes {
 }
 
 const FoodCategotyes: React.FC<IFoodCategoryes> = ({ categoryName, food }) => {
-  if (!food.length) {
+  if (!food?.length) {
     return null;
   }
   return (
@@ -18,9 +18,11 @@ const FoodCategotyes: React.FC<IFoodCategoryes> = ({ categoryName, food }) => {
         <hr />
         <h2>{categoryName}</h2>
       </div>
-      {food.map((food) => (
-        <FoodCard {...food} />
-      ))}
+      <div className="FoodCards">
+        {food.map((food) => (
+          <FoodCard {...food} />
+        ))}
+      </div>
     </div>
   );
 };

@@ -6,7 +6,7 @@ import { IProfileUserData } from "../../../types/IUser";
 export const foodApi = createApi({
   reducerPath: "foodApi",
   baseQuery: fetchBaseQuery({ baseUrl: baseURL }),
-  tagTypes: ["UserFoodData", "AllFoodData"],
+  tagTypes: ["UserFoodData", "AllFoodData", 'FoodInBasket'],
   endpoints: (builder) => ({
     /* -------------------------------------------------------------------------------------------------- */
 
@@ -46,6 +46,26 @@ export const foodApi = createApi({
         url: `/food`,
       }),
       providesTags: ["AllFoodData"],
+    }),
+    /* -------------------------------------------------------------------------------------------------- */
+
+    // получение блюд из корзины
+    getFoodInBasket: builder.query<IFood[], string>({
+      query: () => ({
+        url: `/orders`,
+        headers: { Authorization: `Bearer ${cookies.get("token")}` },
+      }),
+      providesTags: ["FoodInBasket"],
+    }),
+    /* -------------------------------------------------------------------------------------------------- */
+
+    // добавление в корзину
+    addFoodToBasket: builder.mutation<IFood[], string>({
+      query: () => ({
+        url: `/orders`,
+        headers: { Authorization: `Bearer ${cookies.get("token")}` },
+      }),
+      invalidatesTags: ["FoodInBasket"],
     }),
   }),
 });
