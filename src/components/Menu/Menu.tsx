@@ -11,7 +11,7 @@ const Menu = () => {
   return (
     <div className="left-profile">
       <div className="food">
-        {myProducts?.map((item) => item.name)}
+        {myProducts?.map((item) => <img src={item.image} />)}
         <a className="food-button greenBack" href={`#NewProduct`}>
           Добавить карточку еды
         </a>
