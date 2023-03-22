@@ -4,6 +4,11 @@
     .left-profile {
         .food{
             margin: 54px 0 0 110px;
+            > img {
+                width: 325px;
+                height: 227px;
+                border-radius: 10px 10px 0 0;
+            }
 
             .food-button {
                 text-decoration: none;

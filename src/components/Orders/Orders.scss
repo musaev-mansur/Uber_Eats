@@ -1,0 +1,106 @@
+.orders {
+  display: flex;
+  flex-direction: column;
+  .back-home {
+    margin: 49px 0 37px 320px;
+    display: flex;
+    & img {
+      margin: 5px 15px 0 0;
+      cursor: pointer;
+    }
+    & p {
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 19px;
+    }
+  }
+  .orders-title {
+    margin-left: 300px;
+    display: flex;
+    margin-bottom: 54px;
+    & hr {
+      border: none;
+      margin-top: 20px;
+      width: 38px;
+      height: 6px;
+      background: #618967;
+      transform: rotate(90deg);
+    }
+    & h2 {
+      height: 39px;
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 39px;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+  }
+  .orders-cards {
+    margin: auto;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    .order-card {
+        margin-top: -8px;
+        display: flex;
+        padding: 1em;
+        width: 1096px;
+        height: 126px;
+        background: linear-gradient(90deg, #494544 0%, #504B4A 100%);
+        border-radius: 10px 10px 0 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        > img {
+            width: 117px;
+            height: 86px;
+        }
+        .order-name {
+          margin: 15px 220px 0 39px ;
+          width: 300px;
+          > p {
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 22px;
+          }
+          > span {
+            font-size: 12px;
+            line-height: 14px;
+            color: #A6A7AB;
+          }
+        }
+        .order-count {
+          margin: 25px 130px 0 0;
+          display: flex;
+          gap: 10px;
+          .circle {
+            border: none;
+            cursor: pointer;
+            width: 32px;
+            height: 32px;
+            border-radius: 16px;
+            text-align: center;
+          }
+          > p {
+            margin-top: 5px;
+          }
+        }
+        .order-price {
+          width: 90px;
+          margin: 25px 70px 0 0;
+          font-weight: 700;
+          font-size: 20px;
+          line-height: 24px;
+        }
+        .circle-closed {
+          margin: 25px;
+          padding: 7px;
+          border: none;
+          cursor: pointer;
+          width: 32px;
+          height: 32px;
+          border-radius: 16px;
+          text-align: center;
+        }
+    }
+  }
+}

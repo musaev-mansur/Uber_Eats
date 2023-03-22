@@ -14,9 +14,9 @@ const Basket = () => {
     const handleAgreement = (event: { target: { checked: boolean | ((prevState: boolean) => boolean) } }) => {
         setIsAgreed(event.target.checked);
     };
-
-  return (
-    <div>
+    
+    return (
+        <div>
         <Navbar />
 
         <div className="delivery">

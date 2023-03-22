@@ -3,13 +3,14 @@ import { IFood } from "../../../types/IFood";
 import buy from "../../../images/buy.png";
 import { useAppDispatch, useAppSelector } from "../../../hooks/hooks";
 import { addToBasket, removeFromBasket } from "../../../store/reducers/orders/ordersSlice";
+import { Link } from "react-router-dom";
 
 const FoodCard: React.FC<IFood> = ({ name, info, price, image, _id }) => {
   const [count, setCount] = useState(0);
   const dispath = useAppDispatch();
   const { basket } = useAppSelector((state) => state.orders);
 
-  const handleClick = () => {
+  const handleClick = () => {    
     setCount(1);
     dispath(addToBasket(_id));
   };

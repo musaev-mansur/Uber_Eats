@@ -1,41 +1,45 @@
 import React from "react";
-import closed from "../../images/closed.png"
+import { useAppSelector } from "../../hooks/hooks";
+import { foodApi } from "../../store/reducers/servise/foodService";
+import { Link } from "react-router-dom";
+import back_icon from "../../images/back_icon.png";
+
+import Footer from "../Footer/Footer";
+import Navbar from "../Navbar/Navbar";
+import "./Orders.scss";
+import OrderCard from "./OrderCard";
 
 const Orders = () => {
+  const { basket } = useAppSelector((state) => state.orders);
+  const { data: food = [] } = foodApi.useGetAllFoodQuery("");
+
   return (
-    <div className="left-profile">
+    <div>
+      <Navbar />
 
-        <div className="text">
-        <hr />
-        <h2>Список заказов</h2>
-        </div>
-
-        <div className="bookings">
-        <div className="order">
-            <p>Заказ № </p>
-            <span>65e60364</span>
-        </div>
-        <p className="time">Получен в 12:35 (2 часа назад)</p>
-        <p className="status">Статус: <span>принят курьером</span></p>
-        <p className="price-order">777 ₽</p>
-        <div className="circle greenBack">
-            <img src={closed} alt="" />
-        </div>
+      <div className="orders">
+        <div className="back-home">
+          <Link className="turn-off" to="/">
+            <img src={back_icon} alt="" />
+          </Link>
+          <p>к выбору блюда</p>
         </div>
 
-        <div className="bookings">
-        <div className="order">
-            <p>Заказ № </p>
-            <span>65e60364</span>
-        </div>
-        <p className="time">Получен в 12:35 (2 часа назад)</p>
-        <p className="status">Статус: <span>принят курьером</span></p>
-        <p className="price-order">777 ₽</p>
-        <div className="circle greenBack">
-            <img src={closed} alt="" />
-        </div>
+        <div className="orders-title">
+          <hr />
+          <h2>КОРЗИНА</h2>
         </div>
 
+        <div className="orders-cards">
+          {basket.map((foodId) =>
+            food?.map((food) =>
+              food._id === foodId ? <OrderCard {...food} /> : null
+            )
+          )}
+        </div>
+      </div>
+
+      <Footer />
     </div>
   );
 };
