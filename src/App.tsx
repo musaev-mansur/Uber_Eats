@@ -15,6 +15,7 @@ import Information from "./components/Information/Information";
 import Basket from "./components/Basket/Basket";
 import { cookies } from "./Api/api";
 import { foodApi } from "./store/reducers/servise/foodService";
+import Orders from "./components/Orders/Orders";
 
 function App() {
   const dispatch = useAppDispatch();
@@ -46,6 +47,7 @@ function App() {
           <>
             <Route path="/profile" element={<Profile />} />
             <Route path="/basket" element={<Basket />} />
+            <Route path="/orders" element={<Orders />} />
           </>
         )}
       </Routes>

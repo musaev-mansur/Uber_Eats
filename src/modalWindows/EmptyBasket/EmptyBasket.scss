@@ -1,0 +1,6 @@
+#EmptyBasket {
+    display: none;
+    &:target {
+        display: block;
+    }
+}
