@@ -34,7 +34,7 @@ const FoodCard: React.FC<IFood> = ({ name, info, price, image, _id }) => {
         </div>
         <p className="description">{info}</p>
         <div className="footer">
-          {!basket.join("").includes(_id) ? (
+          {basket.indexOf(_id) === -1 ? (
             <>
               <p className="price">{price} ₽</p>
               <button onClick={handleClick} className="greenBack">

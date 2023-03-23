@@ -4,13 +4,14 @@ import logos from "../../images/logos.png";
 import profile from "../../images/profile.png";
 import calling from "../../images/calling.png";
 import "./Navbar.scss";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { userApi } from "../../store/reducers/servise/userServise";
 import { forcedLogOut } from "../../store/reducers/user/userSlice";
 import EmptyBasket from "../../modalWindows/EmptyBasket/EmptyBasket";
 
 const Navbar = () => {
   const dispatch = useAppDispatch();
+  const navigate = useNavigate()
   const { role } = useAppSelector((state) => state.user.currentUser);
   const { isAuth, } = useAppSelector((state) => state.user);
   const { data } = userApi.useGetUserQuery(role);
@@ -20,8 +21,7 @@ const Navbar = () => {
   };
 
   const clickHandler = () => {
-
-      window.location.href = "/basket";
+      navigate('/basket')
   
   };
 
