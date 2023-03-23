@@ -14,12 +14,13 @@ import { useEffect } from "react";
 import Basket from "./components/Basket/Basket";
 import { cookies } from "./Api/api";
 import { foodApi } from "./store/reducers/servise/foodService";
+import Orders from "./components/Orders/Orders";
 
 function App() {
   const dispatch = useAppDispatch();
   const { isLoading, isAuth } = useAppSelector((state) => state.user);
   const {data} = foodApi.useGetFoodInBasketQuery('')
-  console.log(data);
+  // console.log(data);
   
 
   useEffect(() => {
@@ -45,6 +46,7 @@ function App() {
           <>
             <Route path="/profile" element={<Profile />} />
             <Route path="/basket" element={<Basket />} />
+            <Route path="/orders" element={<Orders />} />
           </>
         )}
       </Routes>

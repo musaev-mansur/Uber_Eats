@@ -5,7 +5,7 @@ import { userApi } from "../../store/reducers/servise/userServise";
 import "./Profile.scss";
 import Information from "../../components/Information/Information";
 import Menu from "../../components/Menu/Menu";
-import Orders from "../../components/Orders/Orders";
+import OrdersList from "../../components/OrdersList/OrdersList";
 
 const Profile = () => {
   const [content, setContent] = useState("orders");
@@ -16,7 +16,7 @@ const Profile = () => {
     <div>
       <Navbar />
       <div className="profile">
-        {content === "orders" && <Orders />}
+        {content === "orders" && <OrdersList />}
         {content === "menu" && <Menu />}
         {content === "information" && <Information />}
 

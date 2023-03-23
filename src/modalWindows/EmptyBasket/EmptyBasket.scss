@@ -1,0 +1,65 @@
+.modal-window {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 459px;
+  height: 348px;
+  background: linear-gradient(90deg, #494544 0%, #504b4a 100%);
+  z-index: 2;
+  border-radius: 10px;
+  display: grid;
+
+  * {
+    margin: auto;
+  }
+
+  .modal-active {
+    img {
+      display: block;
+    }
+
+    .modal-comeback {
+      cursor: pointer;
+      height: 18.849246656168646px;
+      width: 18.849246656168646px;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+
+    h2 {
+      margin-top: 14px;
+      margin-bottom: 40px;
+      font-size: 30px;
+      font-weight: 700;
+      line-height: 36px;
+    }
+
+    button {
+      border: none;
+      width: 188.41px;
+      height: 51px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 17px;
+      display: block;
+    }
+  }
+}
+
+#EmptyBasket{
+    display: none;
+    width: 100%;
+    min-height: 110vh;
+    position: fixed;
+    background-color: rgba($color: #000000, $alpha: 0.75);
+    z-index: 2;
+    top: 0;
+    left: 0;
+
+    &:target {
+        display: block
+      }
+}

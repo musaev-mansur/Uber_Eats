@@ -13,30 +13,26 @@ const Basket = () => {
   const [timeContent, setTimeContent] = useState("in_time");
   const [isAgreed, setIsAgreed] = useState(false);
 
-  const { data: food } = foodApi.useGetAllFoodQuery("");
-  const { basket } = useAppSelector((state) => state.orders);
-
-  const handleAgreement = (event: {
-    target: { checked: boolean | ((prevState: boolean) => boolean) };
-  }) => {
-    setIsAgreed(event.target.checked);
-  };
+    const handleAgreement = (event: { target: { checked: boolean | ((prevState: boolean) => boolean) } }) => {
+        setIsAgreed(event.target.checked);
+    };
 
   return (
     <div>
-      <Navbar />
-      <div className="delivery">
-        <div className="menu">
-          <p>Холодные закуски</p>
-          <p>Горячие закуски</p>
-          <p>Мясные блюда</p>
-          <p>Супы</p>
-          <p>Рыбные блюда</p>
-          <p>Гриль меню</p>
-          <p>Фирменные блюда</p>
-          <p>Напитки</p>
+        <Navbar />
+
+        <div className="delivery">
+            <div className="menu">
+                <p>Холодные закуски</p>
+                <p>Горячие закуски</p>
+                <p>Мясные блюда</p>
+                <p>Супы</p>
+                <p>Рыбные блюда</p>
+                <p>Гриль меню</p>
+                <p>Фирменные блюда</p>
+                <p>Напитки</p>
+            </div>
         </div>
-      </div>
 
       <hr className="delivery-hr" />
 

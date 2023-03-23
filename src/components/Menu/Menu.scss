@@ -1,21 +1,27 @@
 .profile {
-    justify-content: space-between;
+  justify-content: space-between;
 
-    .left-profile {
-        .food{
-            margin: 54px 0 0 110px;
+  .left-profile {
+    .food {
+      margin: 54px 0 0 110px;
 
-            .food-button {
-                text-decoration: none;
-                cursor: pointer;
-                padding: 16px 78px 16px 78px;
-                font-weight: 600;
-                font-size: 28px;
-                line-height: 38px;
-                letter-spacing: 0.03em;
-                border-radius: 10px;
-                display: block;
-            }
-        }
+      > img {
+        width: 325px;
+        height: 227px;
+        border-radius: 10px 10px 0 0;
+      }
+
+      .food-button {
+        text-decoration: none;
+        cursor: pointer;
+        padding: 16px 78px 16px 78px;
+        font-weight: 600;
+        font-size: 28px;
+        line-height: 38px;
+        letter-spacing: 0.03em;
+        border-radius: 10px;
+        display: block;
+      }
     }
+  }
 }

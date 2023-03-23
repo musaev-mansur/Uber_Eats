@@ -7,7 +7,6 @@ import "./Navbar.scss";
 import { Link, useNavigate } from "react-router-dom";
 import { userApi } from "../../store/reducers/servise/userServise";
 import { forcedLogOut } from "../../store/reducers/user/userSlice";
-import EmptyBasket from "../../modalWindows/EmptyBasket/EmptyBasket";
 
 const Navbar = () => {
   const dispatch = useAppDispatch();
@@ -15,14 +14,18 @@ const Navbar = () => {
   const { role } = useAppSelector((state) => state.user.currentUser);
   const { isAuth, } = useAppSelector((state) => state.user);
   const { data } = userApi.useGetUserQuery(role);
+  const { basket } = useAppSelector((state) => state.orders)
 
   const handleClick = () => {
     dispatch(forcedLogOut());
   };
 
   const clickHandler = () => {
-      navigate('/basket')
-  
+    if (basket.length){
+      navigate("/orders")
+    } else {
+      window.location.href='#EmptyBasket'
+    }
   };
 
   return (
@@ -60,7 +63,7 @@ const Navbar = () => {
             )}
           </div>
 
-          <button onClick={clickHandler} className="basket greenBack">
+          <button onClick={clickHandler} className="basket greenBack turn-off">
             <span className="basket-text">Корзина</span>
             <hr />
             <p>
