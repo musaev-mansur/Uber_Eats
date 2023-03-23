@@ -41,132 +41,134 @@
       text-transform: uppercase;
     }
   }
+}
+.orders-cards {
+  margin: auto;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(90deg, #494544 0%, #504b4a 100%);
+  border-radius: 10px;
 
-  .orders-cards {
-    margin: auto;
-    position: relative;
-    z-index: 2;
+  .order-card {
     display: flex;
-    flex-direction: column;
+    padding: 1em;
+    width: 1096px;
+    height: 126px;
+    border-bottom: 1px solid  rgba(255, 255, 255, 0.2);
 
-    .order-card {
-      margin-top: -8px;
-      display: flex;
-      padding: 1em;
-      width: 1096px;
-      height: 126px;
-      background: linear-gradient(90deg, #494544 0%, #504b4a 100%);
-      border-radius: 10px 10px 0 0;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    &:last-child{
+      border: none;
+    }
 
-      > img {
-        width: 117px;
-        height: 86px;
-      }
+    > img {
+      width: 117px;
+    }
 
-      .order-name {
-        margin: 15px 220px 0 39px;
-        width: 300px;
+    .order-name {
+      margin: 15px 220px 0 39px;
+      width: 300px;
 
-        > p {
-          font-weight: 700;
-          font-size: 18px;
-          line-height: 22px;
-        }
-
-        > span {
-          font-size: 12px;
-          line-height: 14px;
-          color: #a6a7ab;
-        }
-      }
-
-      .order-count {
-        margin: 25px 130px 0 0;
-        display: flex;
-        gap: 10px;
-
-        .circle {
-          border: none;
-          cursor: pointer;
-          width: 32px;
-          height: 32px;
-          border-radius: 16px;
-          text-align: center;
-          font-size: 25px;
-        }
-
-        > p {
-          margin-top: 5px;
-        }
-      }
-
-      .order-price {
-        width: 90px;
-        margin: 25px 70px 0 0;
+      > p {
         font-weight: 700;
-        font-size: 20px;
-        line-height: 24px;
+        font-size: 18px;
+        line-height: 22px;
       }
 
-      .circle-closed {
-        margin: 25px;
-        padding: 7px;
+      > span {
+        font-size: 12px;
+        line-height: 14px;
+        color: #a6a7ab;
+      }
+    }
+
+    .order-count {
+      margin: 25px 130px 0 0;
+      display: flex;
+      gap: 10px;
+
+      .circle {
         border: none;
         cursor: pointer;
         width: 32px;
         height: 32px;
         border-radius: 16px;
         text-align: center;
+        font-size: 25px;
+      }
+
+      > p {
+        margin-top: 5px;
       }
     }
 
-    .order-total {
-      display: flex;
-      margin: auto;
-      margin-top: 36px;
-      width: 763px;
-      height: 105px;
-      background: linear-gradient(90deg, #494544 0%, #504B4A 100%);
-      border-radius: 10px;
+    .order-price {
+      width: 90px;
+      margin: 25px 70px 0 0;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 24px;
+    }
 
-      .totals {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        margin: 20px 255px 0 38px;
+    .circle-closed {
+      margin: 25px;
+      padding: 7px;
+      border: none;
+      cursor: pointer;
+      width: 32px;
+      height: 32px;
+      border-radius: 16px;
+      text-align: center;
+    }
+  }
+}
 
-        .total-price {
-          font-size: 18px;
-          line-height: 21px;
-          color: #A6A7AB;
+.order-total {
+  display: flex;
+  margin: auto;
+  margin-top: 36px;
+  width: 763px;
+  height: 105px;
+  background: linear-gradient(90deg, #494544 0%, #504b4a 100%);
+  border-radius: 10px;
 
-          & span {
-            font-weight: 700;
-            font-size: 20px;
-            line-height: 24px;
-            color: #FFFFFF;
-          }
-        }
+  .totals {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 20px 255px 0 38px;
 
-        .total-delivery, .total-min {
-          font-size: 12px;
-          line-height: 14px;
-        }
+    .total-price {
+      font-size: 18px;
+      line-height: 21px;
+      color: #a6a7ab;
 
-        .total-delivery span {
-          color: #72A479;
-        }
-      }
-
-      .order-button {
-        margin-top: 27px;
-        border-radius: 10px;
-        padding: 17px 50px;
-        border: none;
-        width: 209px;
-        height: 51px;
+      & span {
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 24px;
+        color: #ffffff;
       }
     }
+
+    .total-delivery,
+    .total-min {
+      font-size: 12px;
+      line-height: 14px;
+    }
+
+    .total-delivery span {
+      color: #72a479;
+    }
+  }
+
+  .order-button {
+    margin-top: 27px;
+    border-radius: 10px;
+    padding: 17px 50px;
+    border: none;
+    width: 209px;
+    height: 51px;
   }
 }

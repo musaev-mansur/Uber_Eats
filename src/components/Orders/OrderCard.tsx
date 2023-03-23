@@ -32,7 +32,7 @@ const OrderCard: React.FC<IFood> = ({ image, _id, name, info, price }) => {
     <div className="order-card">
       <img src={image} alt="" />
       <div className="order-name">
-        <p key={_id}>{name}</p>
+        <p>{name}</p>
         <span>{info}</span>
       </div>
       <div className="order-count">

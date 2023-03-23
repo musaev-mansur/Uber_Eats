@@ -29,5 +29,13 @@ export const userApi = createApi({
       }),
       invalidatesTags: ['UserData']
     }),
+     /*---------------------------------------------------------------------------------------------------- */
+     
+    //Получения данных о пользователе
+    getCafes: builder.query<IProfileUserData[], string>({
+      query: () => ({
+        url: `/cafe`,
+      }),
+    }),
   }),
 });
