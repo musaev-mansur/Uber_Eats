@@ -1,5 +1,6 @@
 .profile {
   display: flex;
+  padding: 0 36px;
 
   .left-profile {
     display: flex;
@@ -32,9 +33,10 @@
       width: 892px;
       height: 130px;
       background: #504b4a;
+      align-items: center;
 
       .order {
-        margin: 28px 0 0 24px;
+        margin: 0px 0 0 24px;
         display: flex;
         flex-direction: column;
         & p,
@@ -45,9 +47,9 @@
           letter-spacing: 0.03em;
         }
       }
-      
+
       .time {
-        margin: 55px 0px 0px 45px;
+        margin: 0px 0px 0px 45px;
         font-weight: 600;
         font-size: 16px;
         line-height: 22px;
@@ -55,7 +57,7 @@
       }
 
       .status {
-        margin: 60px 0px 0px 40px;
+        margin: 0px 0px 0px 40px;
         font-weight: 600;
         font-size: 14px;
         line-height: 19px;
@@ -66,7 +68,7 @@
       }
 
       .price-order {
-        margin: 50px 0px 0px 50px;
+        margin: 0px 0px 0px 50px;
         font-weight: 600;
         font-size: 26px;
         line-height: 35px;
@@ -74,16 +76,16 @@
       }
 
       .circle {
-        margin: 50px 0px 0px 40px;
+        margin: 0px 0px 0px 40px;
         cursor: pointer;
         width: 32px;
         height: 32px;
         border-radius: 16px;
         text-align: center;
+        display: grid;
+        place-items: center;
         img {
-          width: 13.74px;
-          margin-top: 10px;
-          height: 13.49px;
+          width: 18.74px;
         }
       }
     }
@@ -91,7 +93,7 @@
 
   .right-profile {
     margin-top: 30px;
-    margin-left: 43px;
+    margin-left: auto;
     display: flex;
     flex-direction: column;
 
