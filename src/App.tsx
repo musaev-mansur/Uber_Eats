@@ -11,7 +11,6 @@ import SignUpClient from "./pages/SignUpClient/SignUpClient";
 import Profile from "./pages/Profile/Profile";
 import { logOut } from "./store/reducers/user/userActions";
 import { useEffect } from "react";
-import Information from "./components/Information/Information";
 import Basket from "./components/Basket/Basket";
 import { cookies } from "./Api/api";
 import { foodApi } from "./store/reducers/servise/foodService";
@@ -21,7 +20,7 @@ function App() {
   const dispatch = useAppDispatch();
   const { isLoading, isAuth } = useAppSelector((state) => state.user);
   const {data} = foodApi.useGetFoodInBasketQuery('')
-  console.log(data);
+  // console.log(data);
   
 
   useEffect(() => {

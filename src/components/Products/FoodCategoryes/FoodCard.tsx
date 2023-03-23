@@ -2,32 +2,37 @@ import React, { useState } from "react";
 import { IFood } from "../../../types/IFood";
 import buy from "../../../images/buy.png";
 import { useAppDispatch, useAppSelector } from "../../../hooks/hooks";
-import { addToBasket, removeFromBasket } from "../../../store/reducers/orders/ordersSlice";
+import {
+  addToBasket,
+  decrementCount,
+  incrementCount,
+  removeFromBasket,
+} from "../../../store/reducers/orders/ordersSlice";
 import { Link } from "react-router-dom";
 
 const FoodCard: React.FC<IFood> = ({ name, info, price, image, _id }) => {
-  const [count, setCount] = useState(0);
-  const dispath = useAppDispatch();
-  const { basket } = useAppSelector((state) => state.orders);
+  const dispatch = useAppDispatch();
+  const basket = useAppSelector((state) => state.orders.basket).find(
+    (item) => item.id === _id
+  );
 
-  const handleClick = () => {    
-    setCount(1);
-    dispath(addToBasket(_id));
+  const handleClick = () => {
+    dispatch(addToBasket(_id));
   };
 
-  const incrementHandler = () => setCount(count + 1);
+  const incrementHandler = () => dispatch(incrementCount(_id));
   const decrementHandler = () => {
-    if(count <= 1){
-      dispath(removeFromBasket(_id))
-      setCount(0)
-    } else {
-      setCount(count - 1)
+    if(basket?.count === 1){
+      dispatch(removeFromBasket(_id))
     }
+    dispatch(decrementCount(_id));
   };
 
   return (
     <div className="card">
-      {count > 0 && <div className="count greenBack">{count}</div>}
+      {!!basket?.count && (
+        <div className="count greenBack">{basket?.count}</div>
+      )}
       <img src={image} alt="" />
       <div className="card-info">
         <div className="nav">
@@ -35,7 +40,7 @@ const FoodCard: React.FC<IFood> = ({ name, info, price, image, _id }) => {
         </div>
         <p className="description">{info}</p>
         <div className="footer">
-          {!basket.join("").includes(_id) ? (
+          {basket?.id !== _id ? (
             <>
               <p className="price">{price} ₽</p>
               <button onClick={handleClick} className="greenBack">
@@ -51,7 +56,7 @@ const FoodCard: React.FC<IFood> = ({ name, info, price, image, _id }) => {
               >
                 -
               </button>
-              {count * price} ₽
+              {(basket?.count || 1) * price} ₽
               <button
                 onClick={incrementHandler}
                 className="countButton greenBack"

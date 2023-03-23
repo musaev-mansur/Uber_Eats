@@ -1,9 +1,9 @@
 import React from "react";
 import { useAppSelector } from "../../hooks/hooks";
 import { foodApi } from "../../store/reducers/servise/foodService";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import back_icon from "../../images/back_icon.png";
-
+import { useNavigate } from "react-router-dom";
 import Footer from "../Footer/Footer";
 import Navbar from "../Navbar/Navbar";
 import "./Orders.scss";
@@ -11,8 +11,11 @@ import OrderCard from "./OrderCard";
 
 const Orders = () => {
   const { basket } = useAppSelector((state) => state.orders);
-  const { data: food = [] } = foodApi.useGetAllFoodQuery("");
-
+  const { data: food } = foodApi.useGetAllFoodQuery("");
+  const navigate = useNavigate()
+  if(basket.length === 0){
+    navigate("/");
+  }
   return (
     <div>
       <Navbar />
@@ -31,9 +34,9 @@ const Orders = () => {
         </div>
 
         <div className="orders-cards">
-          {basket.map((foodId) =>
+          {basket.map(({ id }) =>
             food?.map((food) =>
-              food._id === foodId ? <OrderCard {...food} /> : null
+              food._id === id ? <OrderCard {...food} /> : null
             )
           )}
         </div>

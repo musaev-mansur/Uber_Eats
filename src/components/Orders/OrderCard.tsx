@@ -1,21 +1,28 @@
 import React, { useState } from "react";
 import closed from "../../images/closed.png";
 import { IFood } from "../../types/IFood";
-import { useAppDispatch } from "../../hooks/hooks";
-import { removeFromBasket } from "../../store/reducers/orders/ordersSlice";
+import { useAppDispatch, useAppSelector } from "../../hooks/hooks";
+import {
+  decrementCount,
+  incrementCount,
+  removeFromBasket,
+} from "../../store/reducers/orders/ordersSlice";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const OrderCard: React.FC<IFood> = ({ image, _id, name, info, price }) => {
-  const [count, setCount] = useState(1);
-  const dispatch = useAppDispatch();
 
-  const incrementHandler = () => setCount(count + 1);
+  const navigate = useNavigate();
+  const dispatch = useAppDispatch();
+  const { basket } = useAppSelector((state) => state.orders);
+  const basketItem = basket.find((item) => item.id === _id);
+
+  const incrementHandler = () => dispatch(incrementCount(_id));
 
   const decrementHandler = () => {
-    if (count <= 1) {
-      dispatch(removeFromBasket(_id));
-      setCount(0);
+    if (basketItem?.count === 1) {
+      deleteOrder()
     } else {
-      setCount(count - 1);
+      dispatch(decrementCount(_id));
     }
   };
 
@@ -23,6 +30,7 @@ const OrderCard: React.FC<IFood> = ({ image, _id, name, info, price }) => {
     dispatch(removeFromBasket(_id));
   };
 
+  
   return (
     <div className="order-card">
       <img src={image} alt="" />
@@ -34,12 +42,12 @@ const OrderCard: React.FC<IFood> = ({ image, _id, name, info, price }) => {
         <button onClick={decrementHandler} className="circle greenBack">
           -
         </button>
-        <p>{count}</p>
+        <p>{basketItem?.count}</p>
         <button onClick={incrementHandler} className="circle greenBack">
           +
         </button>
       </div>
-      <p className="order-price">{price * count} ₽</p>
+      <p className="order-price">{price * (basketItem?.count || 1)} ₽</p>
       <div className="circle-closed greenBack">
         <img onClick={deleteOrder} src={closed} alt="" />
       </div>
