@@ -2,9 +2,11 @@
   display: flex;
   flex-direction: column;
   margin-top: 47px;
+
   .text {
     display: flex;
     margin-left: 26px;
+
     hr {
       border: none;
       margin-top: 16px;
@@ -13,6 +15,7 @@
       background: #618967;
       transform: rotate(90deg);
     }
+
     h2 {
       font-weight: 700;
       font-size: 32px;
@@ -21,16 +24,22 @@
       text-transform: uppercase;
     }
   }
+
   .img-div {
     margin-top: 15px;
     margin-left: 37px;
+    display: flex;
+    width: calc(100% - 76px);
+    flex-wrap: wrap;
+    gap: 16px;
+
     img {
-      margin-right: 16px;
       width: 329px;
       height: 220px;
       border-radius: 10px;
     }
   }
+
   .more {
     margin: auto;
     margin-top: 40px;

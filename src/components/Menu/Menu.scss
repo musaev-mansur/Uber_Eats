@@ -3,7 +3,7 @@
 
   .left-profile {
     .food {
-      margin: 54px 0 0 110px;
+      margin: 54px 0 0 0px;
 
       > img {
         width: 325px;
@@ -21,6 +21,14 @@
         letter-spacing: 0.03em;
         border-radius: 10px;
         display: block;
+        height: 71px;
+        width: 511px;
+        border-radius: 10px;
+        margin: 15px auto;
+      }
+
+      .order-card {
+        width: 940px;
       }
     }
   }

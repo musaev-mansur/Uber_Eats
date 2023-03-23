@@ -2,16 +2,20 @@ import React from "react";
 import { NavLink, useParams } from "react-router-dom";
 import NewProduct from "../../modalWindows/NewProduct/NewProduct";
 import { foodApi } from "../../store/reducers/servise/foodService";
+import MyFood from "../MyFood/MyFood";
 import "./Menu.scss";
 
 const Menu = () => {
-  
-  const {data: myProducts} = foodApi.useGetMyFoodQuery('')
-  
+  const { data: myProducts } = foodApi.useGetMyFoodQuery("");
+
   return (
     <div className="left-profile">
       <div className="food">
-        {/* {myProducts?.map((item) => <img src={item.image} />)} */}
+        <div className="orders-cards">
+          {myProducts?.map((item) => (
+            <MyFood key={item._id} {...item} />
+          ))}
+        </div>
         <a className="food-button greenBack" href={`#NewProduct`}>
           Добавить карточку еды
         </a>

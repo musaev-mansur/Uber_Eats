@@ -26,8 +26,7 @@ export interface ILogIn {
   password: string;
 }
 
-export interface IProfileUserData 
-{
+export interface IProfileUserData {
   _id: string;
   name: string
   image: string
