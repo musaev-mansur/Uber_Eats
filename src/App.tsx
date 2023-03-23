@@ -21,7 +21,6 @@ function App() {
   const { isLoading, isAuth } = useAppSelector((state) => state.user);
   const {data} = foodApi.useGetFoodInBasketQuery('')
   // console.log(data);
-  
 
   useEffect(() => {
     if (cookies.get("data")) {

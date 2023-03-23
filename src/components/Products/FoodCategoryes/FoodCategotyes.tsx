@@ -20,7 +20,7 @@ const FoodCategotyes: React.FC<IFoodCategoryes> = ({ categoryName, food }) => {
       </div>
       <div className="FoodCards">
         {food.map((food) => (
-          <FoodCard {...food} />
+          <FoodCard key={food._id} {...food} />
         ))}
       </div>
     </div>

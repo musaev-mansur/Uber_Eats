@@ -11,12 +11,20 @@ import OrderCard from "./OrderCard";
 
 const Orders = () => {
   const { basket } = useAppSelector((state) => state.orders);
-
   const { data: food } = foodApi.useGetAllFoodQuery("");
   const navigate = useNavigate()
   if(basket.length === 0){
     navigate("/");
   }
+
+  const getTotal = () =>{
+    let total = 0;
+    basket.forEach((item) => {
+      total += item.count * (food?.find((food) => food._id === item.id)?.price || 1)
+    })
+    return total;
+  }
+
   return (
     <div>
       <Navbar />
@@ -42,8 +50,8 @@ const Orders = () => {
           )}
           <div className="order-total">
             <div className="totals">
-              <p className="total-price">Итого: <span>{total} ₽</span></p>
-              <p className="total-delivery">До бесплатной доставки не хватет: <span>{1500 - total} ₽</span></p>
+              <p className="total-price">Итого: <span>{getTotal()} ₽</span></p>
+              <p className="total-delivery">До бесплатной доставки не хватет: <span>{1500 - getTotal() > 0 ? 1500 - getTotal() : 0} ₽</span></p>
               <p className="total-min">Минимальная сума заказа 1500 ₽</p>
             </div>
             <button className="order-button greenBack">
