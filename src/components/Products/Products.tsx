@@ -17,6 +17,7 @@ const Products = () => {
           );
           return (
             <FoodCategotyes
+            key={category._id}
               categoryName={category.name}
               food={food as IFood[]}
             />

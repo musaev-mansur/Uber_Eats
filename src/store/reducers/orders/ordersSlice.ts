@@ -1,10 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-
-interface orders {
-  basket:  {id: string, count: number}[],
-  modalWindow: string,
-}
 const initialState:{basket: {id: string, count: number}[]} = {
     basket: []
 };
@@ -20,7 +15,7 @@ export const basketSlice = createSlice({
       state.basket = state.basket.filter(item => item.id !== action.payload)
     },
     incrementCount: (state, action) => {
-      state.basket.map((item) => {
+      state.basket = state.basket.map((item) => {
         if(item.id === action.payload){
           return {...item, count: item.count++}
         }
@@ -28,7 +23,7 @@ export const basketSlice = createSlice({
       })
     },
     decrementCount: (state, action) => {
-      state.basket.map((item) => {
+     state.basket = state.basket.map((item) => {
         if(item.id === action.payload){
           return {...item, count: item.count--}
         }
