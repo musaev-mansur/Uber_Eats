@@ -49,6 +49,17 @@ export const foodApi = createApi({
     }),
     /* -------------------------------------------------------------------------------------------------- */
 
+    // получение всех блюд
+    deleteFood: builder.mutation({
+      query: () => ({
+        url: `/food/:id`,
+        method: 'DELETE',
+        headers: { Authorization: `Bearer ${cookies.get("token")}` },
+      }),
+      invalidatesTags: ["AllFoodData"],
+    }),
+    /* -------------------------------------------------------------------------------------------------- */
+
     // получение блюд из корзины
     getFoodInBasket: builder.query<IFood[], string>({
       query: () => ({

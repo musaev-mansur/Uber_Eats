@@ -1,9 +1,13 @@
 import React from "react";
 import { IFood } from "../../types/IFood";
 import closed from "../../images/closed.png";
+import { foodApi } from "../../store/reducers/servise/foodService";
 
 const MyFood: React.FC<IFood> = ({ image, _id, info, price, name }) => {
-  const clickHandler = () => {};
+  const [deleteFood] = foodApi.useDeleteFoodMutation();
+  const clickHandler = () => {
+    deleteFood('');
+  };
 
   return (
     <div className="order-card">
@@ -15,9 +19,7 @@ const MyFood: React.FC<IFood> = ({ image, _id, info, price, name }) => {
       <div className="order-count"></div>
       <p className="order-price">{price} ₽</p>
       <div className="circle-closed greenBack">
-        <a href="#delete">
-          <img src={closed} alt="" onClick={clickHandler} />
-        </a>
+        <img src={closed} alt="" onClick={clickHandler} />
       </div>
     </div>
   );
