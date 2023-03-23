@@ -5,6 +5,7 @@ import { ILogIn } from "../../types/IUser";
 import { Link, Navigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import './SignIn.scss'
+import './AdaptiveSignIn.scss'
 import { logIn } from "../../store/reducers/user/userActions";
 
 const SignIn = () => {
