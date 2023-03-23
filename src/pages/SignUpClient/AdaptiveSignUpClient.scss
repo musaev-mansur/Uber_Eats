@@ -1,0 +1,26 @@
+@media(max-width: 375px) {
+    .Registration {
+        padding: 0;
+        margin: auto;
+        background: none;
+        max-width: 375px;
+      .Registration__child {
+        max-width: 375px;
+        .Registration__buttons {
+            width: 225px;
+            margin: 32px 0 0 76px;
+            flex-direction: column;
+            gap: 10px;
+        }
+        & span, h1 {
+            display: none;
+        }
+        & form {
+            margin-left: 51px;
+            & input {
+                width: 277px;
+            }
+        }
+      }
+    }
+  }

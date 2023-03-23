@@ -3,6 +3,7 @@ import Footer from "../Footer/Footer";
 import Navbar from "../Navbar/Navbar";
 import maps from "../../images/maps.png";
 import "./Delivery.scss";
+import "./AdaptiveDelivery.scss"
 
 const Delivery = () => {
 

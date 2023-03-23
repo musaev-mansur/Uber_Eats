@@ -4,6 +4,7 @@ import Input from "../../components/Input/Input";
 import { ISignUp } from "../../types/IUser";
 import { Link } from "react-router-dom";
 import "./SignUpClient.scss";
+import "./AdaptiveSignUpClient.scss";
 import { useAppDispatch } from "../../hooks/hooks";
 import { signUpClient } from "../../store/reducers/user/userActions";
 
