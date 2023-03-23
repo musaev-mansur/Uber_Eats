@@ -7,24 +7,25 @@ import "./Navbar.scss";
 import { Link, useNavigate } from "react-router-dom";
 import { userApi } from "../../store/reducers/servise/userServise";
 import { forcedLogOut } from "../../store/reducers/user/userSlice";
+import location from "../../images/Location.png";
 
 const Navbar = () => {
   const dispatch = useAppDispatch();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const { role } = useAppSelector((state) => state.user.currentUser);
-  const { isAuth, } = useAppSelector((state) => state.user);
+  const { isAuth } = useAppSelector((state) => state.user);
   const { data } = userApi.useGetUserQuery(role);
-  const { basket } = useAppSelector((state) => state.orders)
+  const { basket } = useAppSelector((state) => state.orders);
 
   const handleClick = () => {
     dispatch(forcedLogOut());
   };
 
   const clickHandler = () => {
-    if (basket.length){
-      navigate("/orders")
+    if (basket.length) {
+      navigate("/orders");
     } else {
-      window.location.href='#EmptyBasket'
+      window.location.href = "#EmptyBasket";
     }
   };
 
@@ -37,7 +38,13 @@ const Navbar = () => {
               <img src={logos} alt="logo" />
             </Link>
           </div>
-          <input type="text" placeholder="Search" />
+          <div className="header__search">
+            <input className="input" type="text" />
+            <label className="label">
+              <img src={location} />
+              Введите адрес доставки
+            </label>
+          </div>
         </div>
         <div className="right">
           <div className="circle greenBack">
@@ -47,15 +54,12 @@ const Navbar = () => {
             Контакты:
             <p>+7 (917) 510-57-59</p>
           </div>
-          <div className="profile">
-            {isAuth ? (
-              <button onClick={handleClick}>Выйти </button>
-            ) : (
-              <img src={profile} alt="" />
-            )}
+          <div className="user">
+            <img src={profile} alt="" />
+
             <hr />
             {isAuth ? (
-              <p>{data?.name}</p>
+              <button onClick={handleClick}>Выйти </button>
             ) : (
               <Link className="turn-off" to="/sign-in">
                 Войти
@@ -67,7 +71,7 @@ const Navbar = () => {
             <span className="basket-text">Корзина</span>
             <hr />
             <p>
-              <span className="number">4</span>
+              <span className="number">{basket.length}</span>
             </p>
           </button>
 

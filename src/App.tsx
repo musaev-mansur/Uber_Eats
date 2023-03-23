@@ -15,11 +15,12 @@ import Basket from "./components/Basket/Basket";
 import { cookies } from "./Api/api";
 import { foodApi } from "./store/reducers/servise/foodService";
 import Orders from "./components/Orders/Orders";
+import EmptyBasket from "./modalWindows/EmptyBasket/EmptyBasket";
 
 function App() {
   const dispatch = useAppDispatch();
   const { isLoading, isAuth } = useAppSelector((state) => state.user);
-  const {data} = foodApi.useGetFoodInBasketQuery('')
+  const { data } = foodApi.useGetFoodInBasketQuery("");
   // console.log(data);
 
   useEffect(() => {
@@ -35,6 +36,7 @@ function App() {
           <div>Loading...</div>
         </div>
       )}
+      <EmptyBasket />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/delivery" element={<Delivery />} />

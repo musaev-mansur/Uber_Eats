@@ -1,7 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState:{basket: {id: string, count: number}[]} = {
-    basket: []
+interface orders {
+  basket: { id: string; count: number }[];
+}
+const initialState: { basket: { id: string; count: number }[] } = {
+  basket: [],
 };
 
 export const basketSlice = createSlice({
@@ -9,33 +12,32 @@ export const basketSlice = createSlice({
   initialState,
   reducers: {
     addToBasket: (state, action) => {
-      state.basket.push({id: action.payload, count: 1})
-    }, 
+      state.basket.push({ id: action.payload, count: 1 });
+    },
     removeFromBasket: (state, action) => {
-      state.basket = state.basket.filter(item => item.id !== action.payload)
+      state.basket = state.basket.filter((item) => item.id !== action.payload);
     },
     incrementCount: (state, action) => {
-      state.basket = state.basket.map((item) => {
-        if(item.id === action.payload){
-          return {...item, count: item.count++}
+      state.basket.map((item) => {
+        if (item.id === action.payload) {
+          return { ...item, count: item.count++ };
         }
-        return item
-      })
+        return item;
+      });
     },
     decrementCount: (state, action) => {
-     state.basket = state.basket.map((item) => {
-        if(item.id === action.payload){
-          return {...item, count: item.count--}
+      state.basket.map((item) => {
+        if (item.id === action.payload) {
+          return { ...item, count: item.count-- };
         }
-        return item
-      })
+        return item;
+      });
     },
   },
   extraReducers: () => {},
-   
 });
 
-export const { addToBasket, removeFromBasket, incrementCount, decrementCount } = basketSlice.actions
+export const { addToBasket, removeFromBasket, incrementCount, decrementCount } =
+  basketSlice.actions;
 
 export default basketSlice.reducer;
-
