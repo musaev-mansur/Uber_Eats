@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import arrow from "../../images/arrow.png"
 import logos from "../../images/logos.png"
 import "./Footer.scss"
+import "./AdaptiveFooter.scss"
 
 const Footer = () => {
     

@@ -1,0 +1,73 @@
+@media (max-width: 375px) {
+  .delivery {
+    max-width: 375px;
+    .menu {
+      display: flex;
+      overflow-x: auto;
+      overflow-y: hidden;
+      width: 100%;
+      margin: auto;
+      padding: 0 0 5px 0;
+      &::-webkit-scrollbar {
+        height: 10px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+      }
+    }
+    .text {
+      width: 260px;
+      h2 {
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 24px;
+      }
+    }
+    .main {
+      flex-direction: column-reverse;
+      margin-left: 15px;
+      .maps {
+        & summary {
+          width: 346px;
+          height: 74px;
+          > p {
+            padding: 0 0 0 30px;
+          }
+        }
+        & div {
+            width: 346px;
+            height: 163px;
+            > p {
+                padding: 28px 0 0 30px;
+                width: 330px;
+            }
+        }
+      }
+      & img {
+        width: 346px;
+        height: 290px;
+      }
+    }
+    .schedule {
+        margin-left : 19px;
+        flex-direction: column;
+        .left {
+            margin-right: 0;
+            align-items: flex-start;
+            > p {
+                margin-bottom: 0;
+                font-size: 18px;
+            }
+        }
+    }
+    .min-order {
+        margin: 20px 0 0 19px;
+        & div {
+            width: 336px;
+            height: 150px;
+        }
+    }
+  }
+}

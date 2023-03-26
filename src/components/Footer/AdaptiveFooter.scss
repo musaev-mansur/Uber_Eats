@@ -1,0 +1,9 @@
+@media (max-width: 375px) {
+    .footers {
+        max-width: 375px;
+        & .info {
+            display: none;
+        }
+    }
+  }
+  
