@@ -1,4 +1,4 @@
-@media (max-width: 375px) {
+@media (max-width: 376px) {
   .Auth {
     margin: 0 auto 0;
     max-width: 375px;
@@ -7,21 +7,21 @@
     .Registration__child {
       width: 310px;
 
-      & form {
+      form {
         text-align: center;
 
-        & label {
+        label {
           font-weight: 700;
           font-size: 20px;
           line-height: 24px;
         }
 
-        & input {
+        input {
           width: 311px;
         }
       }
       
-      & span {
+      span {
         max-width: 305px;
       }
     }
