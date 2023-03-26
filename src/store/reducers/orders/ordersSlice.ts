@@ -33,11 +33,15 @@ export const basketSlice = createSlice({
         return item;
       });
     },
+    clearBasket: (state) => {
+      state.basket = []
+    }
   },
+
   extraReducers: () => {},
 });
 
-export const { addToBasket, removeFromBasket, incrementCount, decrementCount } =
+export const { addToBasket, removeFromBasket, incrementCount, decrementCount, clearBasket } =
   basketSlice.actions;
 
 export default basketSlice.reducer;

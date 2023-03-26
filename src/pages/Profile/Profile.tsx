@@ -10,7 +10,7 @@ import OrdersList from "../../components/OrdersList/OrdersList";
 const Profile = () => {
   const [content, setContent] = useState("orders");
   const { role } = useAppSelector((state) => state.user.currentUser);
-  const { error, data } = userApi.useGetUserQuery(role);
+  const { data } = userApi.useGetUserQuery(role);
 
   return (
     <div>

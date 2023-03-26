@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/dist/query/react";
 import { baseURL, cookies } from "../../../Api/api";
-import { IFood, IFoodCategories } from "../../../types/IFood";
+import { IFood, IFoodCategories, IGetOrders, ISetOrder } from "../../../types/IFood";
 import { IProfileUserData } from "../../../types/IUser";
 
 export const foodApi = createApi({
@@ -36,7 +36,7 @@ export const foodApi = createApi({
         headers: { Authorization: `Bearer ${cookies.get("token")}` },
         body: formData,
       }),
-      invalidatesTags: ["UserFoodData"],
+      invalidatesTags: ["UserFoodData", "AllFoodData"],
     }),
     /* -------------------------------------------------------------------------------------------------- */
 
@@ -49,19 +49,19 @@ export const foodApi = createApi({
     }),
     /* -------------------------------------------------------------------------------------------------- */
 
-    // получение всех блюд
+    // удаление блюда
     deleteFood: builder.mutation({
-      query: () => ({
-        url: `/food/:id`,
+      query: (id) => ({
+        url: `/food/${id}`,
         method: 'DELETE',
         headers: { Authorization: `Bearer ${cookies.get("token")}` },
       }),
-      invalidatesTags: ["AllFoodData"],
+      invalidatesTags: ["UserFoodData", 'AllFoodData'],
     }),
     /* -------------------------------------------------------------------------------------------------- */
 
     // получение блюд из корзины
-    getFoodInBasket: builder.query<IFood[], string>({
+    getMyOrders: builder.query<IGetOrders[], string>({
       query: () => ({
         url: `/orders`,
         headers: { Authorization: `Bearer ${cookies.get("token")}` },
@@ -71,9 +71,11 @@ export const foodApi = createApi({
     /* -------------------------------------------------------------------------------------------------- */
 
     // добавление в корзину
-    addFoodToBasket: builder.mutation<IFood[], string>({
-      query: () => ({
+    setOrder: builder.mutation<IGetOrders, ISetOrder>({
+      query: (orderBody) => ({
+        method: "POST",
         url: `/orders`,
+        body: orderBody,
         headers: { Authorization: `Bearer ${cookies.get("token")}` },
       }),
       invalidatesTags: ["FoodInBasket"],

@@ -4,9 +4,12 @@ import closed from "../../images/closed.png";
 import { foodApi } from "../../store/reducers/servise/foodService";
 
 const MyFood: React.FC<IFood> = ({ image, _id, info, price, name }) => {
-  const [deleteFood] = foodApi.useDeleteFoodMutation();
+  const [deleteFood, {isError, isLoading}] = foodApi.useDeleteFoodMutation();
   const clickHandler = () => {
-    deleteFood('');
+    console.log(isError);
+    console.log(isLoading);
+    
+    deleteFood(_id);
   };
 
   return (
