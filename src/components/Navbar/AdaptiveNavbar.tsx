@@ -29,27 +29,39 @@ const AdaptiveNavbar = () => {
   };
 
   return (
-    <div className="menu-click-navbar">
-      <div className="collapse" id="navbarToggleExternalContent">
-        <div className="bg p-4">
-          <div className="adaptoive-contact">
-            <div className="circle greenBack">
-              <img src={calling} alt="" />
-            </div>
-            <div className="contact">
-              Контакты:
-              <p>+7 (917) 510-57-59</p>
-            </div>
-            <div className="user">
-              <img src={profile} alt="" />
-              <hr />
-              {isAuth ? (
-                <button onClick={handleClick}>Выйти </button>
-              ) : (
-                <Link className="turn-off" to="/sign-in">
-                  Войти
-                </Link>
-              )}
+    <nav className="mobile-menu">
+      <input type="checkbox" id="checkbox" className="mobile-menu__checkbox" />
+      <label htmlFor="checkbox" className="mobile-menu__btn">
+        <div className="mobile-menu__icon"></div>
+      </label>
+      <img src={logos} alt="" />
+      <button onClick={clickHandler} className="basket greenBack turn-off">
+        <span className="basket-text">корзина</span>
+        <hr />
+        <img src={buy}></img>
+      </button>
+      <div className="mobile-menu__container">
+        <div className="mobile-menu__list">
+          <div className="bg p-4">
+            <div className="adaptoive-contact">
+              <div className="circle greenBack">
+                <img src={calling} alt="" />
+              </div>
+              <div className="contact">
+                Контакты:
+                <p>+7 (917) 510-57-59</p>
+              </div>
+              <div className="user">
+                <img src={profile} alt="" />
+                <hr />
+                {isAuth ? (
+                  <button onClick={handleClick}>Выйти </button>
+                ) : (
+                  <Link className="turn-off" to="/sign-in">
+                    Войти
+                  </Link>
+                )}
+              </div>
             </div>
           </div>
           <div className="header__search">
@@ -61,28 +73,7 @@ const AdaptiveNavbar = () => {
           </div>
         </div>
       </div>
-      <nav className="navbar">
-        <div className="container-fluid">
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarToggleExternalContent"
-            aria-controls="navbarToggleExternalContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <i className="fa fa-bars" aria-hidden="true"><span>Меню</span></i>
-          </button>
-          <img src={logos} alt="" />
-          <button onClick={clickHandler} className="basket greenBack turn-off">
-            <span className="basket-text">корзина</span>
-            <hr />
-            <img src={buy}></img>
-          </button>
-        </div>
-      </nav>
-    </div>
+    </nav>
   );
 };
 
