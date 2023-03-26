@@ -1,38 +1,97 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useAppDispatch, useAppSelector } from "../../hooks/hooks";
+import { Link, useNavigate } from "react-router-dom";
+import checkbox from "../../images/checbox.png";
+import back_icon from "../../images/back_icon.png";
 import Footer from "../Footer/Footer";
 import Navbar from "../Navbar/Navbar";
-import back_icon from "../../images/back_icon.png";
-import "./Basket.scss";
-import { Link } from "react-router-dom";
+import { ISetOrder } from "../../types/IFood";
 import { foodApi } from "../../store/reducers/servise/foodService";
-import { useAppSelector } from "../../hooks/hooks";
+import { userApi } from "../../store/reducers/servise/userServise";
+import "./Basket.scss";
+import { clearBasket } from "../../store/reducers/orders/ordersSlice";
 
 const Basket = () => {
+  const navigate = useNavigate();
+  const dispatch = useAppDispatch();
+
   const [deliveryContent, setDeliveryContent] = useState("deliveries");
   const [paymentContent, setPaymentContent] = useState("cash");
   const [timeContent, setTimeContent] = useState("in_time");
   const [isAgreed, setIsAgreed] = useState(false);
 
-    const handleAgreement = (event: { target: { checked: boolean | ((prevState: boolean) => boolean) } }) => {
-        setIsAgreed(event.target.checked);
+  const { basket } = useAppSelector((state) => state.orders);
+  const { role } = useAppSelector((state) => state.user.currentUser);
+  const { data: allFood } = foodApi.useGetAllFoodQuery("");
+  const { data: allCafes } = userApi.useGetCafesQuery("");
+  const { data: userData } = userApi.useGetUserQuery(role);
+  const [setOrder] = foodApi.useSetOrderMutation();
+
+  const handleAgreement = (event: {
+    target: { checked: boolean | ((prevState: boolean) => boolean) };
+  }) => {
+    setIsAgreed(event.target.checked);
+  };
+
+  const clickHandler = async () => {
+    const cafe = allCafes?.find(
+      (cafe) =>
+        cafe._id === allFood?.find((food) => food._id === basket[0].id)?.cafeId
+    );
+
+    let orderBody: ISetOrder = {
+      foods: basket.reduce((acc: string[], curr) => {
+        acc.push(curr.id);
+        return acc;
+      }, []),
+      cafeId: cafe?._id || "",
+      clientId: userData?._id || "",
+      total: basket.reduce(
+        (acc, curr) =>
+          acc +
+          (allFood?.find((food) => food._id === curr.id)?.price || 1) *
+            curr.count,
+        0
+      ),
+      from: cafe?.address || "пр. Путина 11",
+      to: userData?.address || "Гикало",
     };
+    await setOrder(orderBody);
+    dispatch(clearBasket());
+    navigate("/");
+  };
+
+  useEffect(() => {
+    if (basket.length === 0) {
+      navigate("/");
+    }
+  });
+
+  const isTimeForDelivery = () => {
+    const currentDate = new Date();
+    const currentHour = currentDate.getHours();
+    const currentMinutes = currentDate.getMinutes();
+    return (
+      (currentHour > 8 || (currentHour === 8 && currentMinutes > 30)) &&
+      (currentHour < 21 || (currentHour === 21 && currentMinutes > 30))
+    );
+  };
 
   return (
     <div>
-        <Navbar />
-
-        <div className="delivery">
-            <div className="menu">
-                <p>Холодные закуски</p>
-                <p>Горячие закуски</p>
-                <p>Мясные блюда</p>
-                <p>Супы</p>
-                <p>Рыбные блюда</p>
-                <p>Гриль меню</p>
-                <p>Фирменные блюда</p>
-                <p>Напитки</p>
-            </div>
+      <Navbar />
+      <div className="delivery">
+        <div className="menu">
+          <p>Холодные закуски</p>
+          <p>Горячие закуски</p>
+          <p>Мясные блюда</p>
+          <p>Супы</p>
+          <p>Рыбные блюда</p>
+          <p>Гриль меню</p>
+          <p>Фирменные блюда</p>
+          <p>Напитки</p>
         </div>
+      </div>
 
       <hr className="delivery-hr" />
 
@@ -40,14 +99,20 @@ const Basket = () => {
         <div className="back-home">
           <Link className="turn-off" to="/">
             <img src={back_icon} alt="" />
+            <p>в корзину</p>
           </Link>
-          <p>в корзину</p>
         </div>
 
         <div className="basket-title">
           <hr />
           <h2>Оформление заказа</h2>
         </div>
+        {!isTimeForDelivery() && (
+          <div className="stop-list">
+            <p>Сегодня мы уже не доставляем.</p>
+            <span>Заказы принимаем до 20:50, доставляем с 8:30 до 21:30</span>
+          </div>
+        )}
 
         <div className="form-basket">
           <form>
@@ -98,9 +163,11 @@ const Basket = () => {
                   <p>Выберите ресторан</p>
                   <select className="restaurant" id="restaurant-select">
                     <option value="">Выберите ресторан</option>
-                    <option value="Dodo">Dodo</option>
-                    <option value="Pizza">Pizza</option>
-                    <option value="Burger">Burger</option>
+                    {allCafes?.map((item) =>
+                      item.name !== "undefined" ? (
+                        <option>{item.name}</option>
+                      ) : null
+                    )}
                   </select>
                 </label>
               )}
@@ -161,19 +228,26 @@ const Basket = () => {
             </div>
 
             <div className="agree-form">
-              <input
-                type="checkbox"
-                id="processingAgreed"
-                onChange={handleAgreement}
-              />
-              <label htmlFor="processingAgreed">
+              <label className="label-input" htmlFor="processingAgreed">
+                <input
+                  type="checkbox"
+                  id="processingAgreed"
+                  onChange={handleAgreement}
+                />
+                <span>
+                  {" "}
+                  <img src={checkbox} alt="" />
+                </span>
+              </label>
+              <label>
                 Я согласен на обработку моих перс. данных в соответствии с{" "}
                 <span>Условиями</span>
               </label>
               <button
                 className={`${!isAgreed ? "greyColor" : "greenBack"}`}
-                type="submit"
+                type="button"
                 disabled={!isAgreed}
+                onClick={clickHandler}
               >
                 Оформить заказ
               </button>

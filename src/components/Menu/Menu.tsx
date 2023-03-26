@@ -1,5 +1,4 @@
 import React from "react";
-import { NavLink, useParams } from "react-router-dom";
 import NewProduct from "../../modalWindows/NewProduct/NewProduct";
 import { foodApi } from "../../store/reducers/servise/foodService";
 import MyFood from "../MyFood/MyFood";

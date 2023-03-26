@@ -13,9 +13,6 @@ const Orders = () => {
   const { basket } = useAppSelector((state) => state.orders);
   const { data: food } = foodApi.useGetAllFoodQuery("");
   const navigate = useNavigate();
-  if (basket.length === 0) {
-    navigate("/");
-  }
 
   const getTotal = () => {
     let total = 0;
@@ -25,6 +22,12 @@ const Orders = () => {
     });
     return total;
   };
+
+  useEffect(() => {
+    if (basket.length === 0) {
+      navigate("/");
+    }
+  })
 
   return (
     <div>
