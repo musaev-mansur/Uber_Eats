@@ -4,10 +4,12 @@ import logos from "../../images/logos.png";
 import profile from "../../images/profile.png";
 import calling from "../../images/calling.png";
 import "./Navbar.scss";
+import "./AdaptiveNavbar.scss";
 import { Link, useNavigate } from "react-router-dom";
 import { userApi } from "../../store/reducers/servise/userServise";
 import { forcedLogOut } from "../../store/reducers/user/userSlice";
 import location from "../../images/Location.png";
+import AdaptiveNavbar from "./AdaptiveNavbar";
 
 const Navbar = () => {
   const dispatch = useAppDispatch();
@@ -32,6 +34,7 @@ const Navbar = () => {
   
   return (
     <>
+      <AdaptiveNavbar />
       <div className="header">
         <div className="left">
           <div className="logo">
