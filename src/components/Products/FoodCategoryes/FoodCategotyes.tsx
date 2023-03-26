@@ -12,7 +12,7 @@ const FoodCategotyes: React.FC<IFoodCategoryes> = ({ categoryName, food }) => {
     return null;
   }
   return (
-    <div>
+    <div id={categoryName}>
       <hr className="products-hr" />
       <div className="text">
         <hr />
