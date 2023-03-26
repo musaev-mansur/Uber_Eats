@@ -1,17 +1,15 @@
 import React from "react";
-import {useAppDispatch, useAppSelector } from "../../hooks/hooks";
+import { useAppDispatch, useAppSelector } from "../../hooks/hooks";
 import logos from "../../images/logos.png";
 import profile from "../../images/profile.png";
 import calling from "../../images/calling.png";
 import "./Navbar.scss";
-import "./AdaptiveNavbar.scss";
 import { Link, useNavigate } from "react-router-dom";
 import { userApi } from "../../store/reducers/servise/userServise";
 import { forcedLogOut } from "../../store/reducers/user/userSlice";
 import location from "../../images/Location.png";
-import AdaptiveNavbar from "./AdaptiveNavbar";
 
-const Navbar = () => {
+const NavbarMobile = () => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const { role } = useAppSelector((state) => state.user.currentUser);
@@ -30,24 +28,15 @@ const Navbar = () => {
       window.location.href = "#EmptyBasket";
     }
   };
-  
-  
+
   return (
     <>
-      <AdaptiveNavbar />
       <div className="header">
         <div className="left">
           <div className="logo">
             <Link to={"/"}>
               <img src={logos} alt="logo" />
             </Link>
-          </div>
-          <div className="header__search">
-            <input className="input" type="text" />
-            <label className="label">
-              <img src={location} />
-              Введите адрес доставки
-            </label>
           </div>
         </div>
         <div className="right">
@@ -78,7 +67,6 @@ const Navbar = () => {
               <span className="number">{basket.length}</span>
             </p>
           </button>
-
           {isAuth && (
             <button className="personal greenBack">
               <span>
@@ -95,8 +83,15 @@ const Navbar = () => {
         </div>
       </div>
       <hr className="navbar-hr" />
+      <div className="header__search">
+        <input className="input" type="text" />
+        <label className="label">
+          <img src={location} />
+          Введите адрес доставки
+        </label>
+      </div>
     </>
   );
 };
 
-export default Navbar;
+export default NavbarMobile;
