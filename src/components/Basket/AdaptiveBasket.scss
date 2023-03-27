@@ -1,7 +1,7 @@
 
 @media (max-width: 375px) {
     div .basket {
-        margin-left: 55px;
+        margin-left: 25px;
         max-width: 375px;
         .basket-title h2 {
             font-size: 20px;
@@ -37,11 +37,14 @@
             .delivery-form {
                 width: 329px;
                 height: 670px;
-                .buttons .button {
-                    padding: 22px 39px;
-                    font-size: 12px;
-                    line-height: 15px;
-                }
+                .buttons {
+                    width: 274px;
+                    .button {
+                        padding: 22px 39px;
+                        font-size: 12px;
+                        line-height: 15px;
+                    }
+                } 
                 .label-delivery {
                     > p {
                         margin: 10px 0 15px 0;
