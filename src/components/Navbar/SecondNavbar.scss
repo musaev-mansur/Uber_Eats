@@ -33,6 +33,7 @@
     line-height: 21px;
     letter-spacing: 0em;
     border-bottom: 3px solid rgba(97, 137, 103, 0);
+    cursor: pointer;
   }
 
   .active {
@@ -89,4 +90,17 @@
       }
     }
   }
+}
+
+@media (max-width: 375px) { 
+  .visiable {
+    transform: translateY(147px);
+  }
+  .SecondNav {
+    width: 1440px;
+    .basket {
+      display: none;
+    }
+  }
+  
 }
