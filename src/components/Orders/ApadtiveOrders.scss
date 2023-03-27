@@ -2,6 +2,7 @@
     .orders {
         .orders-cards {
             .order-card{
+                position: relative;
                 width: 336px;
                 height: 122px;
                 > img {
@@ -34,26 +35,29 @@
                     line-height: 15px;
                 }
                 .circle-closed {
-                    padding: 5px;
+                    position: relative;
+                    right: 5px;
+                    top: 67px;
+                    padding: 4px;
                     font-size: 7px;
                     width: 18px;
                     height: 18px; 
                 }
                 .order-count {
-                    position: relative;
-                    right: 85px;
-                    top: 55px;
+                    display: flex;
+                    align-items: center;
+                    position: absolute;
+                    right: 125px;
+                    bottom: 20px;
                 }
                 .order-price {
-                    width: 120px;
-                    position: relative;
-                    right: 30px;
-                    top: 55px;
+                    width: 80px;
+                    position: absolute;
+                    right: -5px;
+                    bottom: 22px;
                 }
                 .circle-closed {
-                    position: relative;
-                    right: 5px;
-                    top: 55px;
+                    
                 }
             }
         }
