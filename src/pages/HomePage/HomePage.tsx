@@ -7,14 +7,13 @@ import Footer from "../../components/Footer/Footer";
 import NavbarMobile from "../../components/Navbar/NavbarMobile";
 import SecondNavbar from "../../components/Navbar/SecondNavbar";
 const HomePage = () => {
-  
   const [isMobile, setIsMobile] = useState(
     window.matchMedia("(max-width: 376px)").matches
   );
 
   return (
     <>
-      {isMobile ? <NavbarMobile /> : <Navbar />}
+      <Navbar />
       <SecondNavbar />
       <TopCaffe />
       <Products />
