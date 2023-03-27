@@ -2,11 +2,12 @@
   .delivery {
     max-width: 375px;
     .menu {
+      margin: auto;
+      margin-top: 70px;
       display: flex;
       overflow-x: auto;
       overflow-y: hidden;
       width: 100%;
-      margin: auto;
       padding: 0 0 5px 0;
       &::-webkit-scrollbar {
         height: 10px;

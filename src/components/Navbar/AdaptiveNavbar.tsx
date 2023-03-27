@@ -34,7 +34,9 @@ const AdaptiveNavbar = () => {
       <label htmlFor="checkbox" className="mobile-menu__btn">
         <div className="mobile-menu__icon"></div>
       </label>
-      <img src={logos} alt="" />
+      <Link to={"/"}>
+        <img src={logos} alt="" />
+      </Link>
       <button onClick={clickHandler} className="basket greenBack turn-off">
         <span className="basket-text">корзина</span>
         <hr />

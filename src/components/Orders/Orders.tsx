@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useAppSelector } from "../../hooks/hooks";
 import { foodApi } from "../../store/reducers/servise/foodService";
-import { Link, Navigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import back_icon from "../../images/back_icon.png";
 import { useNavigate } from "react-router-dom";
 import Footer from "../Footer/Footer";
 import Navbar from "../Navbar/Navbar";
+import "./ApadtiveOrders.scss"
 import "./Orders.scss";
 import OrderCard from "./OrderCard";
 

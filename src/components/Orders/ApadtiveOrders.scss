@@ -1,0 +1,83 @@
+@media (max-width: 375px) {
+    .orders {
+        .orders-cards {
+            .order-card{
+                width: 336px;
+                height: 122px;
+                > img {
+                    width: 111px;
+                }
+                .order-name {
+                    margin: 0 0 0 18px;
+                    > p {
+                        font-size: 16px;
+                        line-height: 19px;
+                    }
+                    > span {
+                        display: none;
+                    }
+                }
+                .order-count, .order-price, .circle-closed {
+                    margin: 0;
+                    .circle {
+                        font-size: 16px;
+                        width: 18px;
+                        height: 18px; 
+                    }
+                    .order-count p {
+                        margin-top: 0;
+                        height: 15px;
+                    }
+                }
+                .order-price {
+                    font-size: 12px;
+                    line-height: 15px;
+                }
+                .circle-closed {
+                    padding: 5px;
+                    font-size: 7px;
+                    width: 18px;
+                    height: 18px; 
+                }
+                .order-count {
+                    position: relative;
+                    right: 85px;
+                    top: 55px;
+                }
+                .order-price {
+                    width: 120px;
+                    position: relative;
+                    right: 30px;
+                    top: 55px;
+                }
+                .circle-closed {
+                    position: relative;
+                    right: 5px;
+                    top: 55px;
+                }
+            }
+        }
+        .back-home {
+           margin: 99px 0 37px 20px !important;
+        }
+        .orders-title {
+            margin-left: 20px !important;
+        }
+        .order-total {
+            flex-direction: column;
+            width: 329px;
+            height: 182px;
+            .totals {
+                text-align: center;
+                margin: 19px 0 0 0;
+                .total-delivery, .total-min {
+                    font-size: 12px;
+                    line-height: 14px;
+                }
+            }
+            .order-button {
+                margin-left: 60px;
+            }
+        }
+    }
+}
