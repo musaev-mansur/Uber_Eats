@@ -147,3 +147,10 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
   width: 100%;
 }
+
+@media (max-width: 375px) {
+  .products .more {
+    width: 310px;
+    font-size: 19px;
+  }
+}

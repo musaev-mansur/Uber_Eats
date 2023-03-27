@@ -63,3 +63,13 @@
         display: block
       }
 }
+
+@media (max-width: 375px) {
+  #EmptyBasket:target {
+    z-index: 9;
+  }
+  .modal-window {
+    width: 332px;
+    height: 318px;
+  }
+}

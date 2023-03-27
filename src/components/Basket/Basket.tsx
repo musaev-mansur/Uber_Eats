@@ -8,6 +8,7 @@ import Navbar from "../Navbar/Navbar";
 import { ISetOrder } from "../../types/IFood";
 import { foodApi } from "../../store/reducers/servise/foodService";
 import { userApi } from "../../store/reducers/servise/userServise";
+import "./AdaptiveBasket.scss"
 import "./Basket.scss";
 import { clearBasket } from "../../store/reducers/orders/ordersSlice";
 
@@ -183,7 +184,8 @@ const Basket = () => {
                     paymentContent === "credit-card" && `greenBack`
                   }`}
                 >
-                  Оплата онлайн
+                  <span className="desktop-text">Оплата онлайн</span>
+                  <span className="mobile-text">Наличными</span>
                 </p>
                 <p
                   onClick={() => setPaymentContent("delivery-pay")}
@@ -191,7 +193,8 @@ const Basket = () => {
                     paymentContent === "delivery-pay" && `greenBack`
                   }`}
                 >
-                  Курьеру картой
+                  <span className="desktop-text">Курьеру картой</span>
+                  <span className="mobile-text">Картой</span>
                 </p>
                 <p
                   onClick={() => setPaymentContent("cash")}
@@ -199,7 +202,8 @@ const Basket = () => {
                     paymentContent === "cash" && `greenBack`
                   }`}
                 >
-                  Наличными
+                  <span className="desktop-text">Наличными</span>
+                  <span className="mobile-text">Онлайн</span>
                 </p>
               </div>
             </div>

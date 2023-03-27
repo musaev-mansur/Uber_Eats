@@ -1,0 +1,115 @@
+
+@media (max-width: 375px) {
+    div .basket {
+        margin-left: 55px;
+        max-width: 375px;
+        .basket-title h2 {
+            font-size: 20px;
+            line-height: 24px;
+        }
+        .stop-list {
+            background-position: 150px 180px;
+            width: 329px;
+            height: 379px;
+            > p {
+                font-size: 20px;
+                line-height: 24px;
+            }
+            > span {
+                font-size: 14px;
+                line-height: 16px;
+            }
+        }
+        .form-basket form {
+            .contact-form {
+                width: 329px;
+                height: 240px;
+                > p {
+                    font-size: 16px;
+                    line-height: 19px;  
+                }
+                & input {
+                    margin: 10px 15px 0 30px;
+                    width: 279px;
+                    height: 60px;
+                }
+            }
+            .delivery-form {
+                width: 329px;
+                height: 670px;
+                .buttons .button {
+                    padding: 22px 39px;
+                    font-size: 12px;
+                    line-height: 15px;
+                }
+                .label-delivery {
+                    > p {
+                        margin: 10px 0 15px 0;
+                    }
+                    .street {
+                        padding: 21px 8px 20px 30px;
+                    }
+                    .house {
+                        margin-bottom: 20px;
+                    }
+                    .entrance {
+                        margin: 0;
+                        margin-bottom: 20px;
+                    }
+                    .comment {
+                        padding: 21px 9px 20px 30px;
+                    }
+                }
+            }
+            .pay-form {
+                width: 329px;
+                height: 238px;
+                .buttons {
+                    width: 279px;
+                    height: 53px;
+                    .button {
+                        margin-bottom: 0;
+                        padding: 19px 19px;
+                        font-size: 12px;
+                        line-height: 15px;
+                        .desktop-text {
+                            display: none;
+                        }
+                        .mobile-text {
+                            display: block;
+                        }
+                    }
+                }
+            }
+            .time-form {
+                width: 329px;
+                height: 200px;
+                .buttons {
+                    width: 274px;
+                    height: 53px;
+                    .button {
+                        margin-bottom: 0;
+                        padding: 19px 11px;
+                        font-size: 12px;
+                        line-height: 15px;
+                    }
+                }
+            }
+            .agree-form {
+                flex-direction: column-reverse;
+                width: 329px;
+                height: 137px;
+                .label-input {
+                    position: relative;
+                    right: 30px;
+                    bottom: 27px;
+                }
+                label {
+                    margin: 10px 0 0 15px;
+                    width: 229px;
+                    height: 30px;
+                }
+            }
+        }
+    }
+}
