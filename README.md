@@ -1,4 +1,4 @@
-## Веб-приложение по заказу еды
+## Веб-приложение по заказу еды - React
 
 ![alt text](/src/images/README.png)
 
@@ -21,16 +21,16 @@
 
 ### Технологии
 
-#### React
-#### Redux Toolkit
-#### TypeScript
-#### Sass
-#### Axios
-#### Web Vitals
-#### Universal Cookie
-#### Day.js
-#### React Hook Form
-#### React Router DOM
+#### - React
+#### - Redux Toolkit
+#### - TypeScript
+#### - Sass
+#### - Axios
+#### - Web Vitals
+#### - Universal Cookie
+#### - Day.js
+#### - React Hook Form
+#### - React Router DOM
 
 ### Авторы:
 
