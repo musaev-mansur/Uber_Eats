@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/WebApp_React/static/css/main.7b5b8ce8.css",
-    "main.js": "/WebApp_React/static/js/main.6248e6e5.js",
-    "static/media/maps.png": "/WebApp_React/static/media/maps.cb4c46d2630753a19e21.png",
-    "index.html": "/WebApp_React/index.html",
-    "main.7b5b8ce8.css.map": "/WebApp_React/static/css/main.7b5b8ce8.css.map",
-    "main.6248e6e5.js.map": "/WebApp_React/static/js/main.6248e6e5.js.map"
+    "main.css": "/github.io/WebApp_React/static/css/main.7b5b8ce8.css",
+    "main.js": "/github.io/WebApp_React/static/js/main.a68ea00d.js",
+    "static/media/maps.png": "/github.io/WebApp_React/static/media/maps.cb4c46d2630753a19e21.png",
+    "index.html": "/github.io/WebApp_React/index.html",
+    "main.7b5b8ce8.css.map": "/github.io/WebApp_React/static/css/main.7b5b8ce8.css.map",
+    "main.a68ea00d.js.map": "/github.io/WebApp_React/static/js/main.a68ea00d.js.map"
   },
   "entrypoints": [
     "static/css/main.7b5b8ce8.css",
-    "static/js/main.6248e6e5.js"
+    "static/js/main.a68ea00d.js"
   ]
 }
