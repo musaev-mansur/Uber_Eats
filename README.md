@@ -1,189 +1,216 @@
-# 🍔 Uber Eats Clone - Веб-приложение для заказа еды
+# 🍔 Uber Eats Clone - Food Delivery Web Application
 
-Полнофункциональное веб-приложение для заказа еды, созданное с использованием современных технологий.
+A full-featured food delivery web application built with modern technologies.
 
-## 🚀 Технологии
+> **⚠️ Project Status: Under Development**  
+> This project is currently in active development. Some features may be incomplete or subject to change.  
+> We are continuously working on improving functionality, fixing bugs, and adding new features.
+
+## 🚀 Technologies
 
 ### Frontend
-- **Next.js 14** - React фреймворк
-- **TypeScript** - Типизированный JavaScript
-- **Redux Toolkit** - Управление состоянием
-- **Tailwind CSS** - Стилизация
-- **Shadcn/ui** - UI компоненты
-- **Axios** - HTTP клиент
+- **Next.js 14** - React framework
+- **TypeScript** - Typed JavaScript
+- **Redux Toolkit** - State management
+- **Tailwind CSS** - Styling
+- **Shadcn/ui** - UI components
+- **Axios** - HTTP client
 
 ### Backend
-- **Django 4.2** - Python веб-фреймворк
+- **Django 4.2** - Python web framework
 - **Django REST Framework** - API
-- **PostgreSQL** - База данных
-- **Django CORS Headers** - CORS поддержка
+- **PostgreSQL** - Database
+- **Django CORS Headers** - CORS support
 
-## 📁 Структура проекта
+## 📁 Project Structure
 
 ```
 Uber_Eats/
-├── frontend/                 # Next.js приложение
-│   ├── app/                 # App Router страницы
-│   ├── components/          # React компоненты
+├── frontend/                 # Next.js application
+│   ├── app/                 # App Router pages
+│   ├── components/          # React components
 │   ├── store/              # Redux store
-│   ├── types/              # TypeScript типы
-│   └── lib/                # Утилиты
-├── backend/                 # Django приложение
-│   ├── uber/               # Основное приложение
-│   ├── uber_backend/       # Настройки проекта
-│   └── requirements.txt    # Python зависимости
+│   ├── types/              # TypeScript types
+│   └── lib/                # Utilities
+├── backend/                 # Django application
+│   ├── uber/               # Main application
+│   ├── uber_backend/       # Project settings
+│   └── requirements.txt    # Python dependencies
 └── README.md
 ```
 
-## 🛠️ Установка и запуск
+## 🛠️ Installation and Setup
 
-### Предварительные требования
+### Prerequisites
 - Node.js 18+
 - Python 3.9+
 - PostgreSQL
 
 ### Backend (Django)
 
-1. Перейдите в папку backend:
+1. Navigate to the backend folder:
 ```bash
 cd backend
 ```
 
-2. Создайте виртуальное окружение:
+2. Create a virtual environment:
 ```bash
 python -m venv venv
 source venv/bin/activate  # Linux/Mac
-# или
+# or
 venv\Scripts\activate     # Windows
 ```
 
-3. Установите зависимости:
+3. Install dependencies:
 ```bash
 pip install -r requirements.txt
 ```
 
-4. Настройте базу данных в `uber_backend/settings.py`
+4. Configure the database in `uber_backend/settings.py`
 
-5. Выполните миграции:
+5. Run migrations:
 ```bash
 python manage.py migrate
 ```
 
-6. Создайте суперпользователя:
+6. Create a superuser:
 ```bash
 python manage.py createsuperuser
 ```
 
-7. Запустите сервер:
+7. Start the server:
 ```bash
 python manage.py runserver
 ```
 
 ### Frontend (Next.js)
 
-1. Перейдите в папку frontend:
+1. Navigate to the frontend folder:
 ```bash
 cd frontend
 ```
 
-2. Установите зависимости:
+2. Install dependencies:
 ```bash
 npm install
 ```
 
-3. Запустите приложение:
+3. Start the application:
 ```bash
 npm run dev
 ```
 
-Приложение будет доступно по адресу: http://localhost:3000
+The application will be available at: http://localhost:3000
 
-## 🎯 Основные функции
+## 🎯 Key Features
 
-### Для клиентов:
-- ✅ Регистрация и авторизация
-- ✅ Просмотр ресторанов и меню
-- ✅ Добавление блюд в корзину
-- ✅ Оформление заказов
-- ✅ Просмотр истории заказов
-- ✅ Управление профилем
+### For Customers:
+- ✅ User registration and authentication
+- ✅ Browse restaurants and menus
+- ✅ Add items to cart
+- ✅ Place orders
+- ✅ View order history
+- ✅ Profile management
 
-### Для ресторанов:
-- ✅ Регистрация кафе
-- ✅ Управление меню (добавление/редактирование блюд)
-- ✅ Просмотр заказов
-- ✅ Управление статусами заказов
+### For Restaurants:
+- ✅ Restaurant registration
+- ✅ Menu management (add/edit dishes)
+- ✅ View orders
+- ✅ Manage order statuses
 
 ## 🔧 API Endpoints
 
-### Аутентификация
-- `POST /api/auth/register/` - Регистрация
-- `POST /api/auth/login/` - Вход
-- `POST /api/auth/logout/` - Выход
+### Authentication
+- `POST /api/auth/register/` - User registration
+- `POST /api/auth/login/` - User login
+- `POST /api/auth/logout/` - User logout
 
-### Пользователи
-- `GET /api/users/me/` - Текущий пользователь
-- `PUT /api/users/me/` - Обновление профиля
+### Users
+- `GET /api/users/me/` - Current user profile
+- `PUT /api/users/me/` - Update user profile
 
-### Рестораны
-- `GET /api/cafes/` - Список ресторанов
-- `GET /api/cafes/{id}/` - Детали ресторана
+### Restaurants
+- `GET /api/cafes/` - List restaurants
+- `GET /api/cafes/{id}/` - Restaurant details
 
-### Меню
-- `GET /api/foods/` - Список блюд
-- `POST /api/foods/` - Добавление блюда (только для кафе)
-- `PUT /api/foods/{id}/` - Обновление блюда
-- `DELETE /api/foods/{id}/` - Удаление блюда
+### Menu
+- `GET /api/foods/` - List dishes
+- `POST /api/foods/` - Add dish (restaurants only)
+- `PUT /api/foods/{id}/` - Update dish
+- `DELETE /api/foods/{id}/` - Delete dish
 
-### Заказы
-- `GET /api/orders/` - Список заказов
-- `POST /api/orders/` - Создание заказа
-- `PUT /api/orders/{id}/` - Обновление заказа
+### Orders
+- `GET /api/orders/` - List orders
+- `POST /api/orders/` - Create order
+- `PUT /api/orders/{id}/` - Update order
 
-## 🎨 UI/UX особенности
+## 🎨 UI/UX Features
 
-- **Адаптивный дизайн** - работает на всех устройствах
-- **Темная/светлая тема** - переключение тем
-- **Современный интерфейс** - использует Shadcn/ui компоненты
-- **Интуитивная навигация** - простое и понятное меню
-- **Быстрая загрузка** - оптимизированные изображения и код
+- **Responsive Design** - works on all devices
+- **Dark/Light Theme** - theme switching
+- **Modern Interface** - uses Shadcn/ui components
+- **Intuitive Navigation** - simple and clear menu
+- **Fast Loading** - optimized images and code
 
-## 🔐 Безопасность
+## 🔐 Security
 
-- JWT токены для аутентификации
-- CORS настройки
-- Валидация данных на frontend и backend
-- Защищенные маршруты
+- JWT tokens for authentication
+- CORS configuration
+- Data validation on frontend and backend
+- Protected routes
 
-## 📱 Мобильная версия
+## 📱 Mobile Version
 
-Приложение полностью адаптивно и отлично работает на мобильных устройствах.
+The application is fully responsive and works great on mobile devices.
 
-## 🤝 Вклад в проект
+## 🚧 Development Roadmap
 
-1. Форкните репозиторий
-2. Создайте ветку для новой функции
-3. Внесите изменения
-4. Создайте Pull Request
+### Current Status
+- ✅ Basic authentication system
+- ✅ Restaurant and menu management
+- ✅ Order placement and tracking
+- ✅ Responsive UI design
+- 🔄 Order status management (in progress)
+- 🔄 Payment integration (planned)
+- 🔄 Real-time notifications (planned)
+- 🔄 Advanced search and filters (planned)
+- 🔄 Delivery tracking (planned)
+- 🔄 Admin dashboard (planned)
 
-## 📄 Лицензия
+### Upcoming Features
+- Payment gateway integration
+- Real-time order updates
+- Advanced analytics for restaurants
+- Customer reviews and ratings
+- Delivery driver management
+- Push notifications
+- Multi-language support
 
-Этот проект создан в образовательных целях.
+## 🤝 Contributing
 
-## 👥 Авторы
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Create a Pull Request
 
-- **Мансур Мусаев** - [GitHub](https://github.com/Mansur-09595)
-- **Хабиб Маруев** - [GitHub](https://github.com/Maruev-H)
+## 📄 License
 
-## 🚀 Демо
+This project is created for educational purposes.
 
-Для демонстрации функциональности:
-1. Запустите backend и frontend
-2. Зарегистрируйтесь как клиент
-3. Создайте тестовое кафе
-4. Добавьте блюда в меню
-5. Оформите заказ
+## 👥 Authors
+
+- **Mansur Musaev** - [GitHub](https://github.com/Mansur-09595)
+- **Khabib Maruev** - [GitHub](https://github.com/Maruev-H)
+
+## 🚀 Demo
+
+To demonstrate the functionality:
+1. Start backend and frontend
+2. Register as a customer
+3. Create a test restaurant
+4. Add dishes to the menu
+5. Place an order
 
 ---
 
-**Примечание**: Это учебный проект, созданный для изучения современных веб-технологий.
+**Note**: This is an educational project created for learning modern web technologies.
